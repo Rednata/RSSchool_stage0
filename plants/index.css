@@ -1,0 +1,10 @@
+@import "./style/fonts.css";
+@import "./style/var.css";
+@import "./style/normalize.css";
+@import "./style/global.css";
+@import "./style/header.css";
+@import "./style/welcome.css";
+@import "./style/about.css";
+@import "./style/service.css";
+@import "./style/prices.css";
+

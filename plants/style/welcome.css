@@ -1,0 +1,47 @@
+.welcome {
+  background-color: var(--background-color);
+  padding-top: 50px;
+  padding-bottom: 109px;
+}
+
+.welcome__container {
+  background-image: url("../assets/image/leafs_header.png");
+  background-repeat: no-repeat;
+  background-position: 109px 0;
+  background-size: contain;  
+}
+
+.welcome__inner {
+  width: 46%;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.welcome__title {
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--title-text-color);
+  line-height: 50px;
+  margin-bottom: 42px;
+}
+
+.color {
+  color: var(--accent-main-color);
+}
+
+.welcome__text {
+  color: var(--main-text-color);
+  font-size: 20px;
+  line-height: 35px;
+  padding-right: 20px;
+  margin-bottom: 48px;
+}
+
+.welcome__link {  
+  display: block;
+  text-transform: uppercase;
+  width: 159px;
+  padding: 12px 26px 13px 25px;
+  border-radius: 10px;
+  border: 2px solid var(--accent-add-color);
+}
