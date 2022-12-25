@@ -1,0 +1,43 @@
+.header {
+  font-family: Inika;
+  color: var(--links-color);
+  background-color: var(--background-color);
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.header__logo {
+  color: var(--dark-text-color);
+  display: flex;  
+  align-items: flex-end;
+  line-height: 14px;
+  border: 1px solid red;
+  
+}
+
+.header__logo:before{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/image/logo_vector.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
+
+.header__nav {
+  display: block;
+  border: 1px solid red;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: end;
+  gap: 44px;
+}
+
+.nav__item:hover {
+  color: var(--accent-add-color);
+  transition: color 0.2s ease-in-out;
+}
