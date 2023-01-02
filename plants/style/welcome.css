@@ -1,28 +1,28 @@
 .welcome {
   background-color: var(--background-color);
   padding-top: 50px;
-  padding-bottom: 109px;
+  padding-bottom: 95px;
 }
 
 .welcome__container {
   background-image: url("../assets/image/leafs_header.png");
   background-repeat: no-repeat;
-  background-position: 109px 0;
-  background-size: contain;  
+  background-position: 99px 0;  
 }
 
 .welcome__inner {
-  width: 46%;
+  width: 45%;
   margin-right: 0;
   margin-left: auto;
 }
 
 .welcome__title {
+  padding-top: 42px;
   font-size: 45px;
   font-weight: 700;
   color: var(--title-text-color);
   line-height: 50px;
-  margin-bottom: 42px;
+  margin-bottom: 44px;
 }
 
 .color {
@@ -34,14 +34,14 @@
   font-size: 20px;
   line-height: 35px;
   padding-right: 20px;
-  margin-bottom: 48px;
+  margin-bottom: 46px;
 }
 
 .welcome__link {  
   display: block;
   text-transform: uppercase;
   width: 159px;
-  padding: 12px 26px 13px 25px;
+  padding: 11px 26px 9px 26px;
   border-radius: 10px;
   border: 2px solid var(--accent-add-color);
 }

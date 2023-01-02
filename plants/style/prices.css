@@ -1,12 +1,12 @@
 .prices {
-  padding-top: 38px;
-  padding-bottom: 115px;
+  padding-top: 41px;
+  padding-bottom: 126px;
 }
 
 .prices__container {
   background-image: url("../assets/image/leafs_prise.png");
   background-repeat: no-repeat;
-  background-position: bottom right 109px;
+  background-position: top 223px right 100px;
 }
 
 .prices__title {
@@ -32,7 +32,7 @@
 
 .category {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;  
   min-width: 250px;
   min-height: 50px;
@@ -40,6 +40,9 @@
   background-color: var(--background-color);
   font-weight: 700;
   font-size: 20px;
+  padding-left: 39px;
+  padding-right: 41px;
+  
 }
 
 .category:after {
@@ -64,7 +67,7 @@
   font-weight: 700;
   font-size: 40px;
   line-height: 50px;
-  margin-bottom: 38px
+  margin-bottom: 41px
 }
 
 .prices-gardeners__link {  
@@ -73,10 +76,11 @@
   align-items: center;
   border: 1px solid var(--accent-add-color);
   color: var(--accent-add-color);
-  font-family: Inica;
+  font-family: Inika;
   font-weight: 700;
   font-size: 20px;    
   max-width: 162px;
+  padding: 0 20px;
   height: 50px;
   border-radius: 5px;
   background-color: transparent;
