@@ -16,7 +16,6 @@
   color: var(--dark-text-color);
   display: flex;  
   align-items: baseline;
-  /* line-height: 14px; */
 }
 
 .header__logo:before{
@@ -31,12 +30,11 @@
 }
 
 .nav__list {
-  display: flex;
-  /* justify-content: end; */
+  display: flex;  
   gap: 47px;
 }
 
 .nav__item:hover {
   color: var(--accent-add-color);
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease;
 }

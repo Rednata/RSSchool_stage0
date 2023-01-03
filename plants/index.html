@@ -10,7 +10,7 @@
   <link rel="preload" href="./assets/fonts/inika-v21-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/inika-v21-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- <link rel="icon" href="assets/favicon.ico"> -->
+  <link rel="icon" href="./favicon.ico">
   <link rel="stylesheet" href="./index.css">
   <title>Plants</title>
 </head>
@@ -21,22 +21,22 @@
       <a class="header__logo" href="#">
         Plants
       </a>
-      <nav class="header__nav">
+      <nav class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="" class="nav__link">Home</a>
+            <a href="#welcome" class="nav__link">Home</a>
           </li>
           <li class="nav__item">
-            <a href="" class="nav__link">About us</a>
+            <a href="#about" class="nav__link">About us</a>
           </li>
           <li class="nav__item">
-            <a href="" class="nav__link">Service</a>
+            <a href="#service" class="nav__link">Service</a>
           </li>
           <li class="nav__item">
-            <a href="" class="nav__link">Price</a>
+            <a href="#prices" class="nav__link">Price</a>
           </li>
           <li class="nav__item">
-            <a href="" class="nav__link">Contacts</a>
+            <a href="#contacts" class="nav__link">Contacts</a>
           </li>          
         </ul>
       </nav>
@@ -45,8 +45,8 @@
   </header>    
 
   <main>
-    <!-- <div class="container"> -->
-    <section class="welcome">
+
+    <section class="welcome" id="welcome">
       <div class="container welcome__container">
         <div class="welcome__inner">
           <h1 class="welcome__title">
@@ -55,14 +55,14 @@
           <div class="welcome__text">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
           </div>
-          <a href="#" class="welcome__link">
+          <a href="#service" class="welcome__link">
             learn more
           </a>
         </div>
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
       <div class="container">
         <div class="about__inner">
           <div class="about__content">
@@ -79,7 +79,7 @@
       </div>
     </section>
 
-    <section class="service">
+    <section class="service" id="service">
       <div class="container">
         <div class="service__header">
           <h2 class="service__title color">
@@ -171,28 +171,28 @@
       </div>
     </section>
 
-    <section class="prices">
+    <section class="prices" id="prices">
       <div class="container prices__container">
         <h2 class="prices__title">
           Prices
         </h2>
         <div class="prices-inner">
           <div class="prices-prices">                    
-              <div class="category">
-                <p class="category__title">
+              <details class="category">
+                <summary class="category__title">
                   Basics
-                </p>
-              </div>
-              <div class="category">
-                <p class="category__title">
+                </summary>
+              </details>
+              <details class="category">
+                <summary class="category__title">
                   Standard
-                </p>
-              </div>
-              <div class="category">
-                <p class="category__title">
+                </summary>
+              </details>
+              <details class="category">
+                <summary class="category__title">
                   Pro care
-                </p>
-              </div>
+                </summary>
+              </details>
               
           </div>
 
@@ -200,7 +200,7 @@
             <p class="prices-gardeners__title">
               Our best <span class="color"> gardeners</span> are ready to help you
             </p>
-            <a href="#" class="prices-gardeners__link">
+            <a href="#contacts" class="prices-gardeners__link">
               Contact us
             </a>
           </div>
@@ -209,21 +209,20 @@
 
           
         </div>
-      </div>
     </section>
 
-    <section class="contacts">
+    <section class="contacts" id="contacts">
       <div class="container contacts__container">
         <h2 class="contacts__title color">Contact us</h2>
-        <div class="contacts__select">
-          <select class="select" name="city">
-            <option value="">City</option>
-            <option value="canandaigua">Canandaigua, NY</option>
-            <option value="newYork">New York City</option>
-            <option value="yonkers">Yonkers, NY</option>
-            <option value="sherrill">Sherrill, NYs</option>
-          </select>
-        </div>
+        <button class="contacts__select select">City
+          <!-- <details class="select" name="city">
+            <summary class="contacts__option" value="">City</summary>
+            <summary class="contacts__option" value="canandaigua">Canandaigua, NY</summary>
+            <summary class="contacts__option" value="newYork">New York City</summary>
+            <summary class="contacts__option" value="yonkers">Yonkers, NY</summary>
+            <summary class="contacts__option" value="sherrill">Sherrill, NYs</summary>
+          </details> -->
+        </button>
 
       </div>
     </section>    
@@ -235,11 +234,11 @@
       <div class="footer__github">
         <p>&#169;</p>
         <p>2022</p>
-        <a href="#">github</a>
+        <a href="https://github.com/Rednata" target="_blank">github</a>
         
       </div>
       <p class="footer__name">
-        <a class="footer__link" href="#">Rolling Scopes School</a>      
+        <a class="footer__link" href="https://rs.school/js-stage0/" target="_blank">Rolling Scopes School</a>      
       </p>
   
       <ul class="footer__list">

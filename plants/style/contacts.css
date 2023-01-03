@@ -15,12 +15,10 @@
   margin-bottom: 39px;
 }
 
-.contacts__select {
-  position: relative;
-}
-
 .select {  
-  display: block;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-right: 0;
   margin-left: auto;
   width: 450px;
@@ -31,14 +29,10 @@
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding-left: 21px;  
-  appearance: none;  
+  cursor: pointer;
 }
 
-.contacts__select:after {
-  position: absolute;
-  right: 35px;
-  bottom: 50%;
-  transform: translateY(50%);
+.select:after {  
   content: "";  
   display: block;
   width: 16px;
@@ -48,4 +42,17 @@
   background-image: url("../assets/image/arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
+  margin-right: 35px;
+}
+
+.select:active,
+.select:focus {
+  background-color: #c1e698;
+  box-shadow: none;
+}
+
+.select:active:after, 
+.select:focus:after {  
+  transform: rotate(180deg);
+  background-color: #8Ba07e;
 }

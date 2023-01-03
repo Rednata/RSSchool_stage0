@@ -1,12 +1,12 @@
 .service {
   background-color: var(--background-color);
   padding-top: 41px;
-  padding-bottom: 121px;
+  padding-bottom: 120px;
 }
 
 .service__header {
   display: flex;
-  margin-bottom: 78px;
+  margin-bottom: 79px;
 }
 
 .service__title {  
@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   gap: 38px;
-  margin-right: 217px;
+  margin-right: 216px;
   margin-left: auto;
 }
 
@@ -30,20 +30,24 @@
   color: var(--accent-add-color);
   font-family: Inika;
   font-weight: 300;
-  font-size: 20px;
-  letter-spacing: 0.08em;
-  min-width: 161px;  
-  /* height: 60px; */
+  font-size: 20px;  
+  min-width: 161px;    
   padding: 12px 0;
   border-radius: 5px;
   background-color: transparent;
+}
+
+.service__button:active,
+.service__button:focus{
+  color: #ffffff;
+  background-color: var(--accent-add-color); 
 }
 
 .service__list-card {
   display: flex;
   flex-wrap: wrap;
   column-gap: 111px;
-  row-gap: 53px;
+  row-gap: 55px;
   justify-content: space-evenly;
 }
 
@@ -53,7 +57,7 @@
 }
 
 .service-card__content {
-  padding-top: 6px;
+  padding-top: 8px;
   border-radius: 0 0 20px 20px;  
   border: 1px solid var(--border-color);
 }
@@ -70,3 +74,4 @@
   text-align: center;
   margin-bottom: 36px;
 }
+
