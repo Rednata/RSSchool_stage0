@@ -47,9 +47,11 @@
 }
 
 .welcome__link:hover {  
-  /* background-color: var(--accent-add-color);   */
+  border-color: var(--accent-main-color);  
+  transition: border-color 0.2s ease;
 }
 
 .welcome__link:active {
   background-color: var(--accent-add-color);  
+  border-color: var(--accent-add-color);
 }

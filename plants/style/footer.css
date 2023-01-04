@@ -23,3 +23,8 @@
   gap: 20px;
   margin-top: -5px;
 }
+
+.footer__item:hover {
+  color: var(--accent-add-color);
+  transition: color 0.2s ease;
+}
