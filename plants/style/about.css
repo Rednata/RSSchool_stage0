@@ -1,14 +1,14 @@
 .about {
-  padding-top: 82px;
-  padding-bottom: 105px;
-  border: 1px solid blue;
+  padding-top: 95px;
+  padding-bottom: 92px;
+  /* border: 1px solid blue; */
 }
 
 .about__inner {
   display: flex;
   justify-content: space-between;
-  gap: 153px;
-  border: 1px solid black;
+  gap: 164px;
+  /* border: 1px solid black; */
 }
 
 .about__content {
@@ -18,8 +18,9 @@ padding-top: 68px;
 .about__title {
   font-family: Inika;
   font-size: 40px;
+  line-height: 51px;
   color: var(--accent-add-color);
-  margin-bottom: 40px;
+  margin-bottom: 38px;
 }
 
 
@@ -27,8 +28,9 @@ padding-top: 68px;
   font-weight: 300;
   font-size: 20px;
   line-height: 30px;
+  letter-spacing: 0.005em;
 }
 
 .about__img {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }

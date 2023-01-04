@@ -1,16 +1,17 @@
 .service {
   background-color: var(--background-color);
-  padding-top: 35px;
-  padding-bottom: 119px;
+  padding-top: 41px;
+  padding-bottom: 120px;
 }
 
 .service__header {
   display: flex;
-  margin-bottom: 97px;
+  margin-bottom: 79px;
 }
 
 .service__title {  
   font-family: Inika;  
+  font-weight: 400;
   font-size: 40px;
   line-height: 52px;
   width: 306px;
@@ -20,20 +21,26 @@
   display: flex;
   align-items: center;
   gap: 38px;
-  margin-right: 217px;
+  margin-right: 216px;
   margin-left: auto;
 }
 
 .service__button {
   border: 1px solid var(--accent-add-color);
   color: var(--accent-add-color);
-  font-family: Inica;
+  font-family: Inika;
   font-weight: 300;
-  font-size: 20px;
-  min-width: 161px;
-  height: 60px;
+  font-size: 20px;  
+  min-width: 161px;    
+  padding: 12px 0;
   border-radius: 5px;
   background-color: transparent;
+}
+
+.service__button:active,
+.service__button:focus{
+  color: #ffffff;
+  background-color: var(--accent-add-color); 
 }
 
 .service__list-card {
@@ -44,21 +51,22 @@
   justify-content: space-evenly;
 }
 
-.service-card {
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
+.service-card__img {
+  display: block;    
+  border-radius: 20px 20px 0 0;  
 }
 
-.service-card__img {
-  border-radius: 20px 20px 0 0;
-  margin-bottom: 10px;  
+.service-card__content {
+  padding-top: 8px;
+  border-radius: 0 0 20px 20px;  
+  border: 1px solid var(--border-color);
 }
 
 .service-card__title {
   font-weight: 700;
   font-size: 20px;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 13px;
   color: var(--accent-add-color)
 }
 
@@ -66,3 +74,4 @@
   text-align: center;
   margin-bottom: 36px;
 }
+

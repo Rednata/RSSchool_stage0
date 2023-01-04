@@ -1,6 +1,7 @@
 html {
     position: relative;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -81,5 +82,5 @@ body {
     max-width: 1440px;    
     padding: 0 109px;
     margin: 0 auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
