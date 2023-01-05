@@ -55,3 +55,62 @@
   background-color: var(--accent-add-color);  
   border-color: var(--accent-add-color);
 }
+
+@media (max-width:1200px) {
+  .welcome__container {
+    background-size: 35%;
+  }    
+  .welcome__inner {
+    width: 55%;
+  }
+}
+
+@media (max-width:1000px) {
+
+  .welcome__container {
+    background-image: none;
+  }
+  .welcome__inner {
+    width: 60%;    
+    margin-left: 0; 
+  }
+  
+.welcome__title {
+  padding-top: 0;
+  font-size: 35px;  
+  margin-bottom: 35px;
+}
+.welcome__text { 
+  font-size: 16px;
+  padding-left: 6px;
+  line-height: 25px;
+  margin-bottom: 40px;
+}
+}
+
+@media (max-width:860px) {
+  .welcome {
+    padding-bottom: 96px;
+  }
+  .welcome__inner {
+    width: 55%;        
+  }
+  .welcome__link {  
+    padding-left: 24px;    
+    padding-bottom: 10px;    
+  }
+}
+
+
+@media (max-width:1200px) {
+
+}
+@media (max-width:1200px) {
+
+}
+@media (max-width:1200px) {
+
+}
+@media (max-width:1200px) {
+
+}
