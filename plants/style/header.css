@@ -97,6 +97,7 @@
 
   .header {    
     padding-top: 42px;    
+    padding-bottom: 24px;
   }
   .header__logo{    
     padding-bottom: 5px;
