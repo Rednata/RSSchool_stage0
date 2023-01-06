@@ -1,3 +1,4 @@
+
 .header {
   font-family: Inika;
   color: var(--links-color);
@@ -72,15 +73,6 @@
   .nav__list {   
     gap: 25px;
   }
-  /* .header__container {   
-    align-items: center;
-  } */
-  /* .header__nav {
-    display: none;
-  } */
-  /* .burger {
-    display: flex;
-  } */
 }
 
 @media (max-width:600px) {
@@ -103,3 +95,4 @@
     padding-bottom: 5px;
   }
 }
+

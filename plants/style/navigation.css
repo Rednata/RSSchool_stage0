@@ -1,0 +1,26 @@
+.nav {
+  display: flex;    
+  gap: 47px;
+  font-family: Inika;
+  color: var(--links-color);
+}
+
+.nav__item:hover {
+  color: var(--accent-add-color);
+  transition: color 0.2s ease;
+}
+
+@media (max-width:1200px) {  
+  .nav {   
+    gap: 44px;
+  }
+  .nav__link {
+    padding-right: 5px;
+  }
+}
+
+@media (max-width:760px) {
+  .nav {   
+    gap: 25px;
+  }
+}

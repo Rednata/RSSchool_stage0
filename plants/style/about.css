@@ -17,6 +17,7 @@ padding-top: 68px;
 
 .about__title {
   font-family: Inika;
+  font-weight: 400;
   font-size: 40px;
   line-height: 51px;
   color: var(--accent-add-color);
