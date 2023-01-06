@@ -12,7 +12,7 @@
 
 @media (max-width:1200px) {  
   .nav {   
-    gap: 44px;
+    gap: 41px;
   }
   .nav__link {
     padding-right: 5px;

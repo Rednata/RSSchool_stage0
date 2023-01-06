@@ -79,12 +79,12 @@
 @media (max-width: 1350px) {
   .service {
     padding-top: 59px;
-    padding-bottom: 68px;
+    padding-bottom: 71px;
   }
   .service__header {
     flex-direction: column;
     gap: 43px;  
-    margin-bottom: 40px;
+    margin-bottom: 41px;
   }
   .service__title {
     font-size: 35px;
@@ -104,14 +104,14 @@
   .service-card {
     flex-basis: 281px;
   }
-  .service-card:nth-child(3) .service-card__title {
-    margin-left: -19px;
+  .service-card__title {
+    margin-bottom: 9px;
   }
   .service-card__text {
     padding-right: 38px;
     padding-left: 38px;
-    text-align: left;
-    margin-bottom: 18px;
+    text-align: center;
+    margin-bottom: 21px;
   }
 }
 
@@ -144,10 +144,10 @@
 }
 
 @media (max-width: 480px) {
+  .service {
+    padding-bottom: 24px;
+  }
   .service__list-card {   
     gap: 33px;
   }
-}
-.service {
-  padding-bottom: 24px;
 }

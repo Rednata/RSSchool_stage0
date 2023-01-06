@@ -7,7 +7,9 @@
 .welcome__container {
   background-image: url("../assets/image/leafs_header.png");
   background-repeat: no-repeat;
-  background-position: 99px 0;  
+  /* background-position: 99px 0;   */
+  background-position: top -3px left 102px;  
+  /* border: 1px solid red; */
 }
 
 .welcome__inner {
@@ -66,10 +68,10 @@
 }
 
 @media (max-width:1000px) {
-
-  .welcome__container {
-    background-image: none;
+  .welcome__container {   
+    background-position: top 0 right 0;
   }
+
   .welcome__inner {
     width: 60%;    
     margin-left: 0; 
@@ -78,19 +80,23 @@
 .welcome__title {
   padding-top: 0;
   font-size: 35px;  
-  margin-bottom: 35px;
+  margin-bottom: 33px;
 }
 .welcome__text { 
   font-size: 16px;
   padding-left: 6px;
   line-height: 25px;
-  margin-bottom: 40px;
+  margin-bottom: 34px;
 }
 }
 
 @media (max-width:860px) {
   .welcome {
-    padding-bottom: 96px;
+    padding-bottom: 70px;
+  }
+    .welcome__container {
+    background-size: 38%;
+    background-position: top -4px right 41px;
   }
   .welcome__inner {
     width: 55%;        

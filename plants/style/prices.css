@@ -1,13 +1,18 @@
 .prices {
   padding-top: 41px;
   padding-bottom: 126px;
+  background-image: url("../assets/image/leafs_prise.png");
+  background-repeat: no-repeat;
+  background-position: bottom 108px right 100px;
+
 }
 
-.prices__container {
+/* .prices__container {
   background-image: url("../assets/image/leafs_prise.png");
   background-repeat: no-repeat;
   background-position: top 223px right 100px;
-}
+  border: 1px solid red;
+} */
 
 .prices__title {
   font-weight: 700;
@@ -100,7 +105,7 @@
 
 .prices-gardeners {
   text-align: right;
-  transform: translateY(-110px);
+  transform: translateY(-110px);  
 }
 
 .prices-gardeners__title {  
@@ -108,7 +113,7 @@
   font-weight: 700;
   font-size: 40px;
   line-height: 50px;
-  margin-bottom: 41px
+  margin-bottom: 41px;  
 }
 
 .prices-gardeners__link {  
@@ -134,3 +139,24 @@
   transition: border-color 0.2s ease;
 }
 
+@media (max-width: 1000px) {
+  .prices {
+    padding-top: 41px;
+    padding-bottom: 162px;
+    background-position: bottom 80px right 40px;
+  }
+  .prices__title {   
+    font-size: 35px;    
+    margin-bottom: 58px;
+    padding-left: 14px;
+  } 
+  .prices-gardeners {
+    transform: translateY(0); 
+    max-width: 290px;
+  }
+  .prices-gardeners__title {     
+    font-size: 25px;
+    line-height: 35px;            
+    margin-bottom: 29px
+  }
+}
