@@ -1,18 +1,19 @@
 .prices {
   padding-top: 41px;
-  padding-bottom: 126px;
-  background-image: url("../assets/image/leafs_prise.png");
+  /* padding-bottom: 126px; */
+  /* background-image: url("../assets/image/leafs_prise.png");
   background-repeat: no-repeat;
-  background-position: bottom 108px right 100px;
-
+  background-position: bottom 108px right 100px; */
+  
 }
 
-/* .prices__container {
+.prices__container {
   background-image: url("../assets/image/leafs_prise.png");
   background-repeat: no-repeat;
   background-position: top 223px right 100px;
-  border: 1px solid red;
-} */
+  
+  padding-bottom: 126px;
+}
 
 .prices__title {
   font-weight: 700;
@@ -23,6 +24,7 @@
 .prices-inner {
   display: flex;
   justify-content: space-between;
+  /* border: 1px solid red; */
 }
 
 .prices-prices {
@@ -33,6 +35,7 @@
   border-radius: 20px; 
   border: 1px solid var(--border-color);
   padding: 34px 41px;
+  /* border: 1px solid blue; */
 }
 
 .category {
@@ -142,6 +145,9 @@
 @media (max-width: 1000px) {
   .prices {
     padding-top: 41px;
+    
+  }
+  .prices__container {
     padding-bottom: 162px;
     background-position: bottom 80px right 40px;
   }
@@ -158,5 +164,62 @@
     font-size: 25px;
     line-height: 35px;            
     margin-bottom: 29px
+  }
+}
+
+@media (max-width: 750px) {
+  .prices {
+    padding-top: 26px;    
+  }
+  .prices__container {
+    background-image: none;
+    padding-bottom: 41px;
+  }
+  .prices-inner {
+    flex-direction: column;
+    gap: 17px;        
+    width: 60%;
+    margin: 0 auto;
+  }
+  .prices__title {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .prices-prices {
+    padding: 29px 22px;
+    gap: 12px;
+  }
+  .category {
+    min-width: 180px;
+    padding-left: 29px;
+    font-size: 15px;
+  }
+  .category:after {
+    transform: translateY(0);
+  }
+  .prices-gardeners {
+    margin: 0 auto;
+    width: 101%;
+    text-align: center;
+  }
+  .prices-gardeners__title {
+    font-size: 20px;
+    margin-bottom: 19px;
+  }
+  .prices-gardeners__link {
+    width: 121px;
+    height: 35px;
+    font-size: 15px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 580px) {
+  .prices-inner {
+    width: 224px;
+  }
+  .prices__title {
+    margin-left: -13px;
   }
 }

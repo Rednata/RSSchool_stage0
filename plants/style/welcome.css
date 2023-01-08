@@ -111,6 +111,9 @@
   .welcome__inner {
     width: 70%;        
   }
+  .welcome__container {
+    background-image: none;
+  }
 }
 
 @media (max-width:600px) {
