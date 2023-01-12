@@ -17,12 +17,39 @@
 <body>
   
   <header class="header">
+    <!-- <div class="overlay"> -->
+    <div class="container burger__container">
+      <button class="close-btn">
+        <span class="close-btn__span"></span>
+        <span class="close-btn__span"></span>
+      </button>
+        <ul class="burger__nav nav">
+          <li class="nav__item">
+            <a href="#welcome" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About us</a>
+          </li>
+          <li class="nav__item">
+            <a href="#service" class="nav__link">Service</a>
+          </li>
+          <li class="nav__item">
+            <a href="#prices" class="nav__link">Price</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contacts" class="nav__link">Contacts</a>
+          </li>          
+        </ul>
+      
+      
+    </div>
+    
     <div class="container header__container">
       <a class="header__logo" href="#">
         Plants
       </a>
-      <nav class="header__nav nav">
-        <ul class="nav__list">
+      <nav class="header__nav ">
+        <ul class="nav__list nav">
           <li class="nav__item">
             <a href="#welcome" class="nav__link">Home</a>
           </li>
@@ -40,6 +67,12 @@
           </li>          
         </ul>
       </nav>
+      <button class="burger">
+        <span class="burger__dash"></span>
+        <span class="burger__dash"></span>
+        <span class="burger__dash"></span>
+        <span class="burger__dash"></span>
+      </button>
     </div>
 
   </header>    
@@ -95,7 +128,10 @@
         <ul class="service__list-card">
 
           <li class="service-card">
-            <img class="service-card__img" src="./assets/image/service/service1.png" alt="женщина в рабочих перчатках держит обрезанную пластиковую бутылку, наполненную землей, с посаженным цветком">
+            <picture>
+              <source srcset="./assets/image/service768/first1.jpg" media="(max-width:768px)">
+              <img class="service-card__img" src="./assets/image/service/service1.png" alt="женщина в рабочих перчатках держит обрезанную пластиковую бутылку, наполненную землей, с посаженным цветком">
+            </picture>
             <div class="service-card__content">
               <h3 class="service-card__title">
                 Garden care
@@ -108,7 +144,10 @@
           </li>
           
           <li class="service-card">
-            <img src="./assets/image/service/service2.png" alt="лимонное дерево с красивым лимоном, который срывает чья-то рука" class="service-card__img">
+            <picture>
+              <source srcset="./assets/image/service768/first2.jpg" media="(max-width:768px)">
+              <img src="./assets/image/service/service2.png" alt="лимонное дерево с красивым лимоном, который срывает чья-то рука" class="service-card__img">
+            </picture>            
             <div class="service-card__content">
               <h3 class="service-card__title">
                 Planting
@@ -120,7 +159,10 @@
           </li>
 
           <li class="service-card">
-            <img src="./assets/image/service/service3.png" alt="человек в рабочем фартуке и перчатках опрыскивает кустарниковые растения из пульверизатора" class="service-card__img">
+            <picture>
+              <source srcset="./assets/image/service768/first3.jpg" media="(max-width:768px)">
+              <img src="./assets/image/service/service3.png" alt="человек в рабочем фартуке и перчатках опрыскивает кустарниковые растения из пульверизатора" class="service-card__img">
+            </picture>                        
             <div class="service-card__content">
               <h3 class="service-card__title">
                 Lawn care
@@ -132,7 +174,10 @@
           </li>
 
           <li class="service-card">
-            <img src="./assets/image/service/service4.png" alt="девушка придерживает цветущее горшечное растение; рядом еще одно горшечное растение и кувшин" class="service-card__img">
+            <picture>
+              <source srcset="./assets/image/service768/first4.jpg" media="(max-width:768px)">
+              <img src="./assets/image/service/service4.png" alt="девушка придерживает цветущее горшечное растение; рядом еще одно горшечное растение и кувшин" class="service-card__img">
+            </picture>              
             <div class="service-card__content">
               <h3 class="service-card__title">
                 Planting
@@ -144,7 +189,10 @@
           </li>
 
           <li class="service-card">
-            <img src="./assets/image/service/service5.png" alt="маленькие горшочки, пустые и с растениями" class="service-card__img">
+            <picture>
+              <source srcset="./assets/image/service768/first5.jpg" media="(max-width:768px)">
+              <img src="./assets/image/service/service5.png" alt="маленькие горшочки, пустые и с растениями" class="service-card__img">
+            </picture>  
             <div class="service-card__content">
               <h3 class="service-card__title">
                 Garden care
@@ -156,7 +204,10 @@
           </li>
 
           <li class="service-card">
-            <img src="./assets/image/service/service6.png" alt="заботливые руки осторожно пересаживают маленькие кактусы" class="service-card__img">
+            <picture>
+              <source srcset="./assets/image/service768/first6.jpg" media="(max-width:768px)">
+              <img src="./assets/image/service/service6.png" alt="заботливые руки осторожно пересаживают маленькие кактусы" class="service-card__img">
+            </picture>              
             <div class="service-card__content">
               <h3 class="service-card__title">
                 Planting
@@ -288,6 +339,6 @@
     </div>
 
   </footer>
-  
+</div>
 </body>
 </html>

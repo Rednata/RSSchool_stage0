@@ -1,10 +1,13 @@
 .contacts {
   padding-top: 64px;
-  padding-bottom: 352px;
   background-color: var(--background-color);
+}
+
+.contacts__container {
+  padding-bottom: 352px;
   background-image: url("../assets/image/contact_woman1.png");
   background-repeat: no-repeat;
-  background-position: bottom left 109px;
+  background-position: bottom 0 left 109px;  
 }
 
 .contacts__title {
@@ -22,6 +25,7 @@
   margin-right: 0;
   margin-left: auto;
   width: 450px;
+
   height: 50px;
   color: var(--title-text-color);
   background-color: var(--select-color);  
@@ -55,4 +59,52 @@
 .select:focus:after {  
   transform: rotate(180deg);
   background-color: #8Ba07e;
+}
+
+@media (max-width: 1000px) {
+  .contacts {
+    padding-top: 43px;
+    
+  }
+  .contacts__container {
+    padding-bottom: 498px;
+    background-image: url("../assets/image/contact_woman768.png");
+    background-position: bottom 0 right 48%;
+  }
+  .contacts__title {    
+    margin-bottom: 102px;
+  }
+  .select {
+    width: 67.5%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacts {
+    padding-top: 28px;    
+  }
+  .contacts__container  {
+    background-image: url("../assets/image/contact_woman380.png");
+    padding-bottom: 251px;
+    background-position: bottom 0 right 51%;
+  }
+  .contacts__title {
+    font-size: 25px;
+    margin-bottom: 88px;
+  }
+  .select {
+    width: 300px;    
+
+  }  
+  .select:after {
+    margin-right: 22px;
+  }
+}
+
+@media  (max-width: 360px) {
+  .select {
+    width: 250px;
+  }
+  
 }

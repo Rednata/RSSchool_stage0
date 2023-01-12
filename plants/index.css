@@ -3,6 +3,8 @@
 @import "./style/normalize.css";
 @import "./style/global.css";
 @import "./style/header.css";
+@import "./style/navigation.css";
+@import "./style/burger.css";
 @import "./style/welcome.css";
 @import "./style/about.css";
 @import "./style/service.css";
