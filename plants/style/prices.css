@@ -1,10 +1,5 @@
 .prices {
   padding-top: 41px;
-  /* padding-bottom: 126px; */
-  /* background-image: url("../assets/image/leafs_prise.png");
-  background-repeat: no-repeat;
-  background-position: bottom 108px right 100px; */
-  
 }
 
 .prices__container {
@@ -23,8 +18,7 @@
 
 .prices-inner {
   display: flex;
-  justify-content: space-between;
-  /* border: 1px solid red; */
+  justify-content: space-between;  
 }
 
 .prices-prices {
@@ -35,7 +29,6 @@
   border-radius: 20px; 
   border: 1px solid var(--border-color);
   padding: 34px 41px;
-  /* border: 1px solid blue; */
 }
 
 .category {
@@ -59,7 +52,6 @@
 }
 
 .category:after {
-  /* position: absolute; */
   right: 0;
   bottom: 0;  
   transform: translateY(-25%);
@@ -73,7 +65,6 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-
 
 .category__title {
   position: relative;

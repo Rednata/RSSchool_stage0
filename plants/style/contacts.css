@@ -1,10 +1,13 @@
 .contacts {
   padding-top: 64px;
-  padding-bottom: 352px;
   background-color: var(--background-color);
+}
+
+.contacts__container {
+  padding-bottom: 352px;
   background-image: url("../assets/image/contact_woman1.png");
   background-repeat: no-repeat;
-  background-position: bottom left 109px;  
+  background-position: bottom 0 left 109px;  
 }
 
 .contacts__title {
@@ -61,6 +64,9 @@
 @media (max-width: 1000px) {
   .contacts {
     padding-top: 43px;
+    
+  }
+  .contacts__container {
     padding-bottom: 498px;
     background-image: url("../assets/image/contact_woman768.png");
     background-position: bottom 0 right 48%;
@@ -76,7 +82,9 @@
 
 @media (max-width: 600px) {
   .contacts {
-    padding-top: 28px;
+    padding-top: 28px;    
+  }
+  .contacts__container  {
     background-image: url("../assets/image/contact_woman380.png");
     padding-bottom: 251px;
     background-position: bottom 0 right 51%;
@@ -92,4 +100,11 @@
   .select:after {
     margin-right: 22px;
   }
+}
+
+@media  (max-width: 360px) {
+  .select {
+    width: 250px;
+  }
+  
 }

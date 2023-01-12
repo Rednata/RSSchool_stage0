@@ -6,10 +6,8 @@
 
 .welcome__container {
   background-image: url("../assets/image/leafs_header.png");
-  background-repeat: no-repeat;
-  /* background-position: 99px 0;   */
-  background-position: top -3px left 102px;  
-  /* border: 1px solid red; */
+  background-repeat: no-repeat;  
+  background-position: top -3px left 102px;    
 }
 
 .welcome__inner {
@@ -121,9 +119,6 @@
     padding-top: 11px;
     padding-bottom: 29px;
   }
-  .welcome__inner {    
-    /* width: 90%;        */
-  }
   .welcome__title {   
     font-size: 25px;  
     line-height: 35px;
@@ -144,7 +139,6 @@
   .welcome__inner {
     width: 80%;        
   }
-
 }
 
 @media (max-width:400px) {

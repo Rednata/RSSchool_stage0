@@ -1,21 +1,31 @@
-const burgerOpen = document.querySelector('.burger');
+const burgerBtnOpen = document.querySelector('.burger');
 const burgerNavActive = document.querySelector('.burger__container')
 const burgerClose = document.querySelector('.close-btn');
+const logo = document.querySelector('.header__logo');
+const body = document.querySelector('body');
 
-
-burgerOpen.addEventListener('click', () => {
+const openMenu = () => {
   burgerNavActive.classList.add('burger__active');
-  burgerOpen.classList.add('burgerMenuNotactive')
+  burgerBtnOpen.classList.add('burgerMenuNotactive');
+  logo.style.display = 'none';
+}
+
+const closeMenu = () => {
+  burgerNavActive.classList.remove('burger__active');
+  burgerBtnOpen.classList.remove('burgerMenuNotactive');
+  logo.style.display = 'flex';
+}
+
+burgerBtnOpen.addEventListener('click', () => {
+  openMenu();
 })
 
 burgerClose.addEventListener('click', () => {
-  burgerNavActive.classList.remove('burger__active');
-  burgerOpen.classList.remove('burgerMenuNotactive')
+  closeMenu();
 })
 
-const serviceHeader = document.querySelector('.service__header');
 
-console.dir(serviceHeader);
+
 
 // console.log(`
 // Оценка работы: 100 / 100
