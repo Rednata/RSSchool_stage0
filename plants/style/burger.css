@@ -1,0 +1,68 @@
+.burger {  
+  flex-direction: column;  
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+}
+
+.burgerMenuNotactive {
+  display: none;
+}
+
+.burger__dash {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--title-text-color);
+}
+
+
+.burger__container {
+  display: none;
+  transform: translateY(-200px);
+  position: relative;
+}
+
+.burger__active {
+  display: block;
+  transform: translateY(0px);
+  transition: transform 2s ease-in-out;
+}
+
+.burger__nav {
+  justify-content: center; 
+  flex-wrap: wrap;
+  column-gap: 28px;
+  row-gap: 15px;
+}
+
+.burger__nav .nav__item {
+  border-radius: 10px;
+  border: 1px solid var(--accent-main-color);
+  flex-basis: 110px;
+  padding: 2px;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: -35px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  border: none;
+
+}
+.close-btn__span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  transform: rotate(45deg);  
+  background-color: var(--accent-main-color);
+}
+
+.close-btn__span:first-child {
+  transform: translateY(2px) rotate(135deg);
+}

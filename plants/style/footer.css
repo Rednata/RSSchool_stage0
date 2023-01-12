@@ -28,3 +28,29 @@
   color: var(--accent-add-color);
   transition: color 0.2s ease;
 }
+
+@media (max-width: 800px) {
+  .footer {
+    padding-top: 34px;
+    padding-bottom: 22px;
+  }
+  .footer__container {
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+  }
+  .footer__name {
+    margin-bottom: 13px;
+    margin-left: -21px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding-top: 24px;   
+    padding-bottom: 10px;
+  }
+  .footer__name {
+    margin-bottom: 0;   
+  }
+}
