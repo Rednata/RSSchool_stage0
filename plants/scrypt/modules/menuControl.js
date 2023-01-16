@@ -4,15 +4,15 @@ const burgerClose = document.querySelector('.close-btn');
 const logo = document.querySelector('.header__logo');
 
 const openMenu = () => {
-  burgerNavActive.classList.toggle('burger__container_active');
-  burgerBtnOpen.classList.toggle('burgerMenuOff');
+  burgerNavActive.classList.add('burger__container_active');
+  burgerBtnOpen.classList.add('burgerMenuOff');
   logo.style.display = 'none';  
   document.body.classList.add('body-overlay');
 }
 
 const closeMenu = () => {
-  burgerNavActive.classList.toggle('burger__container_active');  
-  burgerBtnOpen.classList.toggle('burgerMenuOff');  
+  burgerNavActive.classList.remove('burger__container_active');  
+  burgerBtnOpen.classList.remove('burgerMenuOff');  
   logo.style.display = 'flex';  
   document.body.classList.remove('body-overlay');
 }
@@ -26,18 +26,17 @@ const onOverlayClick = () => {
   })
 }
 
-const isChangeSizeWindow = () => {
-  window.addEventListener('resize', () => {
-    console.log('=======');
-  })
-}
+const mediaQ = window.matchMedia('(min-width: 600px)')
+
+mediaQ.addEventListener('change', (e) => {
+  if (e.matches) {
+    closeMenu();
+  }
+})
 
 const menuControl = () => {
   burgerBtnOpen.addEventListener('click', () => openMenu());
-  onOverlayClick();
-  isChangeSizeWindow();
+  onOverlayClick();  
 }
-
-
 
 export {menuControl};
