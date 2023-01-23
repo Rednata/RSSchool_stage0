@@ -37,8 +37,12 @@
   background-color: transparent;
 }
 
-.service__button:active,
-.service__button:focus{
+/* .service__button:active {
+  color: #ffffff;
+  background-color: var(--accent-add-color); 
+} */
+
+.service__button_active {
   color: #ffffff;
   background-color: var(--accent-add-color); 
 }
@@ -49,6 +53,10 @@
   column-gap: 111px;
   row-gap: 55px;
   justify-content: space-evenly;
+}
+
+.service-card_blur {
+  filter: blur(2px);
 }
 
 .service-card__img {
