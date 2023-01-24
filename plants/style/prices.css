@@ -38,13 +38,14 @@
   border-radius: 20px; 
   background-color: var(--background-color);
   padding: 16px 40px 16px;
+  transition: background-color 0.5s;
   overflow: hidden;
 }
 
 .category_active {    
   background-color: var(--select-color);
   height: auto;
-  padding: 16px 40px 12px;
+  padding: 16px 40px 12px;  
 }
 
 .category__title {
