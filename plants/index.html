@@ -244,9 +244,9 @@
                     / per hour
                 </span>
               </div>
-              <button class="category__order">
+              <a class="category__order" href="#contacts">
                 Order
-              </button>
+              </a>
             </div>
 
             <div class="category">
@@ -262,9 +262,9 @@
                     / per hour
                 </span>
               </div>
-              <button class="category__order">
+              <a class="category__order" href="#contacts">
                 Order
-              </button>
+              </a>
             </div>
 
             <div class="category">
@@ -280,9 +280,9 @@
                     / per hour
                 </span>
               </div>
-              <button class="category__order">
+              <a class="category__order" href="#contacts">
                 Order
-              </button>
+              </a>
             </div>              
               
           </div>
@@ -303,20 +303,52 @@
     </section>
 
     <section class="contacts" id="contacts">
-      <div class="container contacts__container">
+      <div class="container contacts__container container-img">
         <h2 class="contacts__title color">Contact us</h2>
-        <button class="contacts__select select">City
-          <!-- <details class="select" name="city">
-            <summary class="contacts__option" value="">City</summary>
-            <summary class="contacts__option" value="canandaigua">Canandaigua, NY</summary>
-            <summary class="contacts__option" value="newYork">New York City</summary>
-            <summary class="contacts__option" value="yonkers">Yonkers, NY</summary>
-            <summary class="contacts__option" value="sherrill">Sherrill, NYs</summary>
-          </details> -->
-        </button>
+        <button class="contacts__title-city">City</button>
+
+        <section class="city-card">          
+          <div class="city-card__wrapper">
+            <ul class="city-card__list">
+              <li class="city-card__item item">
+                <p class="item__title">City:</p>
+                <p class="item__info city">Yonkers, NY</p>
+              </li>
+    
+              <li class="city-card__item item">
+                <p class="item__title">Phone:</p>
+                <p class="item__info phone">+1	914	678 0003</p>
+              </li>
+    
+              <li class="city-card__item item">
+                <p class="item__title">Office adress:</p>
+                <p class="item__info address">511 Warburton Ave</p>
+              </li>
+            </ul>
+            <a class="city-card__btn">Call us</a>
+          </div>
+        </section>
+
+        <ul class="contacts__select select">
+          <li class="select__city">            
+              Canandaigua, NY            
+          </li>
+          <li class="select__city">            
+              New York City            
+          </li>
+          <li class="select__city">            
+              Yonkers, NY
+          </li>
+          <li class="select__city">            
+              Sherrill, NY
+          </li>
+
+        </ul>
 
       </div>
     </section>    
+
+
   
   </main>
   
