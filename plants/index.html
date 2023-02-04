@@ -230,31 +230,60 @@
         </h2>
         <div class="prices-inner">
           <div class="prices-prices">                    
-              <button class="category">Basics
-                
-              </button>
-              <button class="category">Standard
-                
-              </button>
-              <button class="category">Pro care
-                
-              </button>
+            <div class="category" tabindex="0">
+              <h4 class="category__title">Basics</h4>                         
+                <span class="category__hr"></span>
+                <p class="category__descript">
+                  Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                </p>
+                <div class="category__price-wrapper">
+  
+                  <div class="category__price-USD">$</div>
+                  <div class="category__price-count">15</div>
+                  <span class="category__price-hour">
+                      / per hour
+                  </span>
+                </div>
+                <a class="category__order" href="#contacts" tabindex="-1">
+                  Order
+                </a>
+              </div>            
 
-              <!-- <details class="category">
-                <summary class="category__title">
-                  Basics
-                </summary>
-              </details>
-              <details class="category">
-                <summary class="category__title">
-                  Standard
-                </summary>
-              </details>
-              <details class="category">
-                <summary class="category__title">
-                  Pro care
-                </summary>
-              </details> -->
+            <div class="category" tabindex="0">
+              <h4 class="category__title">Standard</h4>
+              <span class="category__hr"></span>
+              <p class="category__descript">
+                Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+              </p>
+              <div class="category__price-wrapper">
+                <div class="category__price-USD">$</div>
+                <div class="category__price-count">25</div>
+                <span class="category__price-hour">
+                    / per hour
+                </span>
+              </div>
+              <a class="category__order" href="#contacts" tabindex="-1">
+                Order
+              </a>
+            </div>
+
+            <div class="category" tabindex="0">
+              <h4 class="category__title">Pro care</h4>
+              <span class="category__hr"></span>
+              <p class="category__descript">
+                Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+              </p>
+              <div class="category__price-wrapper">
+                <div class="category__price-USD">$</div>
+                <div class="category__price-count">35</div>
+                <span class="category__price-hour">
+                    / per hour
+                </span>
+              </div>
+              <a class="category__order" href="#contacts" tabindex="-1">
+                Order
+              </a>
+            </div>              
               
           </div>
 
@@ -274,20 +303,53 @@
     </section>
 
     <section class="contacts" id="contacts">
-      <div class="container contacts__container">
+      <div class="container contacts__container container-img">
         <h2 class="contacts__title color">Contact us</h2>
-        <button class="contacts__select select">City
-          <!-- <details class="select" name="city">
-            <summary class="contacts__option" value="">City</summary>
-            <summary class="contacts__option" value="canandaigua">Canandaigua, NY</summary>
-            <summary class="contacts__option" value="newYork">New York City</summary>
-            <summary class="contacts__option" value="yonkers">Yonkers, NY</summary>
-            <summary class="contacts__option" value="sherrill">Sherrill, NYs</summary>
-          </details> -->
+        <button class="contacts__title-city" data-title="City">City<span class="btn__pseudo"></span>
         </button>
+
+        <section class="city-card">          
+          <div class="city-card__wrapper">
+            <ul class="city-card__list">
+              <li class="city-card__item item">
+                <p class="item__title">City:</p>
+                <p class="item__info city">Yonkers, NY</p>
+              </li>
+    
+              <li class="city-card__item item">
+                <p class="item__title">Phone:</p>
+                <p class="item__info phone">+1	914	678 0003</p>
+              </li>
+    
+              <li class="city-card__item item">
+                <p class="item__title">Office adress:</p>
+                <p class="item__info address">511 Warburton Ave</p>
+              </li>
+            </ul>
+            <a class="city-card__btn">Call us</a>
+          </div>
+        </section>
+
+        <ul class="contacts__select select">
+          <li class="select__city">            
+              Canandaigua, NY            
+          </li>
+          <li class="select__city">            
+              New York City            
+          </li>
+          <li class="select__city">            
+              Yonkers, NY
+          </li>
+          <li class="select__city">            
+              Sherrill, NY
+          </li>
+
+        </ul>
 
       </div>
     </section>    
+
+
   
   </main>
   

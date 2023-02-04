@@ -4,47 +4,61 @@ const buttons = document.querySelectorAll('.service__button');
 
 const countBtn = new Set;
 
+const makeCardBlur = () => {
+  serviceCards.forEach(card => card.classList.add('service-card_blur'))
+};
+
+const makeActiveBtn = (target) => {
+  target.classList.add('service__button_active');
+}
+
+const makeDisactiveBtn = (target) => {
+  target.classList.remove('service__button_active')
+}
+
+const makeActiveCard = () => {  
+  countBtn.forEach(btn => {    
+    serviceCards.forEach(card => {
+      if (card.dataset.blur === btn.textContent) {
+        card.className = ('service-card');
+      } 
+    })
+  })
+}
+
+const makeSet = (target) => {  
+    if (countBtn.has(target)) {    
+      makeDisactiveBtn(target);
+      countBtn.delete(target);
+    } else {    
+      makeActiveBtn(target);    
+      countBtn.add(target);    
+    }
+  } 
+
 const onClickServiceBtn = () => {
   serviceBtnGroup.addEventListener('click', ({ target }) => {
-    if (target.closest('.service__button')) {   
-      if (countBtn.size === 2) {
-        if (countBtn.has(target)) {
-          countBtn.delete(target);
-          target.classList.toggle('service__button_active')
-        }
+
+    if (target.closest('.service__button')) {       
+      makeCardBlur();
+      if (countBtn.size < 2) {
+        makeSet(target);
+        makeActiveCard();
       } else {
-        if (countBtn.has(target)) {
+        if (countBtn.has(target)) {    
+          makeDisactiveBtn(target);
           countBtn.delete(target);
-          target.classList.toggle('service__button_active')
-        } else {
-          countBtn.add(target);
-          target.classList.toggle('service__button_active')
-        }
-      }
+          makeActiveCard();
+        };
+        }      
+      }      
+
+    if (countBtn.size === 0) {
+      serviceCards.forEach(card => {
+        card.className = ('service-card');
+      })
     }
-
-  if (countBtn.size === 0) {
-    serviceCards.forEach(card => card.className = 'service-card');
-  }
-
-    countBtn.forEach(button => {      
-      serviceCards.forEach(card => {              
-        if (card.dataset.blur !== button.textContent) {
-          card.classList.add('service-card_blur');          
-        }         
-      })
-    })
-
-    countBtn.forEach(button => {
-      serviceCards.forEach(card => {      
-        if (card.dataset.blur === button.textContent) {
-          card.className = 'service-card';          
-        }         
-      })
-    })
-
   })
-
 }
 
 export {onClickServiceBtn};

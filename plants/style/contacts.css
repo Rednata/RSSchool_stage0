@@ -4,7 +4,7 @@
 }
 
 .contacts__container {
-  padding-bottom: 352px;
+  padding-bottom: 118px;
   background-image: url("../assets/image/contact_woman1.png");
   background-repeat: no-repeat;
   background-position: bottom 0 left 109px;  
@@ -15,50 +15,104 @@
   font-weight: 700;
   font-size: 40px;  
   text-align: center;
-  margin-bottom: 39px;
+  margin-bottom: 39px;  
 }
 
-.select {  
+.contacts__title-city {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-right: 0;
-  margin-left: auto;
-  width: 450px;
-
-  height: 50px;
   color: var(--title-text-color);
   background-color: var(--select-color);  
   font-size: 20px;
+  font-weight: 400;
+  padding-left: 35px;
+  width: 450px;
+  height: 50px;
+  margin-right: 0;
+  margin-left: auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
   border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding-left: 21px;  
-  cursor: pointer;
+  outline: none;
 }
 
-.select:after {  
-  content: "";  
+.btn__pseudo {  
+  position: absolute;
   display: block;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
-  background-color: var(--select-color-round);
-  background-image: url("../assets/image/arrow.svg");
+  top: 50%;
+  transform: translateY(-50%);
+  right: 35px;
+  background-image: url("../assets/image/accordion_btn.svg");
   background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 35px;
+  background-position: center;  
 }
 
-.select:active,
-.select:focus {
-  background-color: #c1e698;
+.btn__pseudo_active {  
+  background-image: url("../assets/image/drop_btn.svg");
+}
+
+
+.contacts__title-city:focus {
+  background-color: #C1E698;    
   box-shadow: none;
 }
 
-.select:active:after, 
-.select:focus:after {  
-  transform: rotate(180deg);
-  background-color: #8Ba07e;
+.contacts__title-cityActive {  
+  box-shadow: none;
+  background-color: #C1E698;  
+}
+
+/* .contacts__title-cityActive::after{
+  background-image: url(../assets/image/drop_btn.svg);  
+  background-repeat: no-repeat;
+  background-position: center;  
+} */
+
+/* .contacts__title-city:focus:after {
+  background-image: url(../assets/image/drop_btn.svg);
+} */
+
+.select {  
+  display: flex;
+  flex-direction: column;  
+  justify-content: space-between;
+  height: 234px;
+  margin-right: 0;
+  margin-left: auto;
+  width: 450px;
+  background-color: #DCE9D9;
+  cursor: pointer;
+  padding: 27px 35px 31px;
+  visibility: hidden;
+  margin-bottom: 31px;
+}
+
+.select_open {
+  visibility: visible;
+}
+
+.select_city-card-open {
+  display: none;
+}
+
+
+.select__city {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-bottom: 1px solid #D9D9D9;
+  font-size: 16px;
+  color: var(--accent-main-color);
+  padding-bottom: 5px;
+}
+
+.select__city:hover {
+  color: var(--title-text-color);
+  border-bottom-color: var(--title-text-color);
 }
 
 @media (max-width: 1000px) {
@@ -67,14 +121,15 @@
     
   }
   .contacts__container {
-    padding-bottom: 498px;
+    padding-bottom: 264px;
     background-image: url("../assets/image/contact_woman768.png");
     background-position: bottom 0 right 48%;
   }
   .contacts__title {    
     margin-bottom: 102px;
   }
-  .select {
+  .select, 
+  .contacts__title-city {
     width: 67.5%;
     margin: 0 auto;
   }
@@ -86,25 +141,26 @@
   }
   .contacts__container  {
     background-image: url("../assets/image/contact_woman380.png");
-    padding-bottom: 251px;
+    padding-bottom: 17px;
     background-position: bottom 0 right 51%;
+  }
+  .contacts__container_hidden {
+    padding-bottom: 17px;
+    background-image: none;    
   }
   .contacts__title {
     font-size: 25px;
     margin-bottom: 88px;
   }
-  .select {
+  .select, 
+  .contacts__title-city {
     width: 300px;    
-
   }  
-  .select:after {
-    margin-right: 22px;
-  }
 }
 
 @media  (max-width: 360px) {
-  .select {
+  .select,
+  .contacts__title-city {
     width: 250px;
-  }
-  
+  } 
 }
