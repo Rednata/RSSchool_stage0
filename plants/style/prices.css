@@ -34,14 +34,18 @@
 .category {
   position: relative;
   width: 250px;
-  height: 50px;
   border-radius: 20px; 
   background-color: var(--background-color);
-  padding: 16px 40px 16px;
-  transition: background-color 0.5s;
   overflow: hidden;
+  padding: 16px 40px 16px;
+  height: 50px;
+  transition: height .4s ease-in-out;
+
 }
 
+.category:focus {
+  outline: 1px solid var(--accent-add-color)
+}
 .category_active {    
   background-color: var(--select-color);
   height: auto;  

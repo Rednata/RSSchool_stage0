@@ -7,6 +7,7 @@ const cityContacts = {
 
 const cityTitleBtn = document.querySelector('.contacts__title-city');
 const select = document.querySelector('.select');
+const pseudo = document.querySelector('.btn__pseudo');
 
 const showCityCard = (target) => {  
   const targetText = target.textContent.trim();  
@@ -23,25 +24,29 @@ const showCityCard = (target) => {
 
 const changeTitleBtn = (title) => {
   cityTitleBtn.textContent = title;
-  cityTitleBtn.classList.add('contacts__title-cityActive');
+
+  cityTitleBtn.dataset.title = '';
+  cityTitleBtn.classList.add('contacts__title-cityActive');    
+  cityTitleBtn.insertAdjacentHTML('afterbegin', 
+  `
+  <span class="btn__pseudo"></span>
+  `)  
 }
 
 const showContacts = () => {
-  cityTitleBtn.addEventListener('click', () => {    
-    if (document.body.clientWidth <= 600) {
-      
+  cityTitleBtn.addEventListener('click', () => {  
+    if (document.body.clientWidth <= 600) {      
       document.querySelector('.container-img').classList.toggle('contacts__container_hidden');          
       document.querySelector('.container-img').classList.toggle('contacts__container');          
-
     }
-    if (cityTitleBtn.textContent ==='City') {    
-      
 
-      select.classList.toggle('select_open');
+    if (cityTitleBtn.dataset.title ==='City') {    
+      select.classList.toggle('select_open');     
+      document.querySelector('.btn__pseudo').classList.toggle('btn__pseudo_active')      
 
       select.addEventListener('click', ({target}) => {
         if (target.closest('.select__city')) {
-          changeTitleBtn(target.textContent);
+          changeTitleBtn(target.textContent);                    
           showCityCard(target);
           select.classList.add('select_city-card-open');
           select.classList.remove('select_open');
@@ -51,12 +56,15 @@ const showContacts = () => {
     } else {
       document.querySelector('.city-card').classList.remove('city-card_active');
       select.classList.remove('select_city-card-open');
-      cityTitleBtn.textContent = 'City';
+
+      cityTitleBtn.textContent = 'City'
+      cityTitleBtn.dataset.title = 'City';    
       cityTitleBtn.classList.remove('contacts__title-cityActive');
-
-
-    }   
-  
+      cityTitleBtn.insertAdjacentHTML('afterbegin', 
+      `
+      <span class="btn__pseudo"></span>
+      `)  
+    }     
   })
 
   const mediaQ = window.matchMedia('(min-width: 600px)')
@@ -74,3 +82,4 @@ const showContacts = () => {
 }
 
 export {showContacts};
+

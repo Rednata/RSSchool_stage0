@@ -36,9 +36,8 @@
   outline: none;
 }
 
-.contacts__title-city:after {  
+.btn__pseudo {  
   position: absolute;
-  content: "";  
   display: block;
   width: 16px;
   height: 16px;
@@ -50,32 +49,30 @@
   background-position: center;  
 }
 
-.contacts__title-city:active {
-
+.btn__pseudo_active {  
+  background-image: url("../assets/image/drop_btn.svg");
 }
+
 
 .contacts__title-city:focus {
   background-color: #C1E698;    
   box-shadow: none;
-
-
 }
 
 .contacts__title-cityActive {  
   box-shadow: none;
   background-color: #C1E698;  
-  
 }
 
-.contacts__title-cityActive::after{
+/* .contacts__title-cityActive::after{
   background-image: url(../assets/image/drop_btn.svg);  
   background-repeat: no-repeat;
   background-position: center;  
-}
+} */
 
-.contacts__title-city:focus:after {
+/* .contacts__title-city:focus:after {
   background-image: url(../assets/image/drop_btn.svg);
-}
+} */
 
 .select {  
   display: flex;

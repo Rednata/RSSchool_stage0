@@ -230,26 +230,26 @@
         </h2>
         <div class="prices-inner">
           <div class="prices-prices">                    
-            <div class="category">
-              <h4 class="category__title">Basics</h4>
-              <span class="category__hr"></span>
-              <p class="category__descript">
-                Release of Letraset sheets containing Lorem Ipsum passages, and more recently
-              </p>
-              <div class="category__price-wrapper">
+            <div class="category" tabindex="0">
+              <h4 class="category__title">Basics</h4>                         
+                <span class="category__hr"></span>
+                <p class="category__descript">
+                  Release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                </p>
+                <div class="category__price-wrapper">
+  
+                  <div class="category__price-USD">$</div>
+                  <div class="category__price-count">15</div>
+                  <span class="category__price-hour">
+                      / per hour
+                  </span>
+                </div>
+                <a class="category__order" href="#contacts" tabindex="-1">
+                  Order
+                </a>
+              </div>            
 
-                <div class="category__price-USD">$</div>
-                <div class="category__price-count">15</div>
-                <span class="category__price-hour">
-                    / per hour
-                </span>
-              </div>
-              <a class="category__order" href="#contacts">
-                Order
-              </a>
-            </div>
-
-            <div class="category">
+            <div class="category" tabindex="0">
               <h4 class="category__title">Standard</h4>
               <span class="category__hr"></span>
               <p class="category__descript">
@@ -262,12 +262,12 @@
                     / per hour
                 </span>
               </div>
-              <a class="category__order" href="#contacts">
+              <a class="category__order" href="#contacts" tabindex="-1">
                 Order
               </a>
             </div>
 
-            <div class="category">
+            <div class="category" tabindex="0">
               <h4 class="category__title">Pro care</h4>
               <span class="category__hr"></span>
               <p class="category__descript">
@@ -280,7 +280,7 @@
                     / per hour
                 </span>
               </div>
-              <a class="category__order" href="#contacts">
+              <a class="category__order" href="#contacts" tabindex="-1">
                 Order
               </a>
             </div>              
@@ -305,7 +305,8 @@
     <section class="contacts" id="contacts">
       <div class="container contacts__container container-img">
         <h2 class="contacts__title color">Contact us</h2>
-        <button class="contacts__title-city">City</button>
+        <button class="contacts__title-city" data-title="City">City<span class="btn__pseudo"></span>
+        </button>
 
         <section class="city-card">          
           <div class="city-card__wrapper">
