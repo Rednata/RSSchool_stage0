@@ -10,22 +10,46 @@
   <title>momentum</title>
 </head>
 <body>
-  <header class="header">
-    <div class="player">
-      <div class="player-controls">
-        <button class="play-prev player-icon"></button>
-        <button class="play player-icon"></button>
-        <button class="play-next player-icon"></button>
-      </div>
-      <ul class="play-list"></ul>
+  <header class="header">    
+    <div class="player__inner">
+      <div class="player">      
+        <div class="player-controls">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+        </div>
+        <div class="player-progress">
+          <p class="player-name"></p>
+          <input type="range" class="progress__input" min="0" value="0" step="1">
+          <p class="player__time">
+            <span class="player__time-passed">0:00</span>
+            <span>/</span>
+            <span class="player__time-total">0:00</span>
+          </p>
+        </div>
+        <div class="player-volume">
+          <input type="range" class="volume__input" min="0" max="100" value="50">
+          <button class="player__volume-btn">
+          </button>
+        </div> 
     </div>
+    
+      <ul class="play-list">
+        <li class="play-item" data-song="Aqua Caelestis">1 Aqua Caelestis</li>
+        <li class="play-item" data-song="Ennio Morricone">2 Ennio Morricone</li>
+        <li class="play-item" data-song="River Flows In You">3 River Flows In You</li>
+        <li class="play-item" data-song="Summer Wind">4 Summer Wind</li>
+      </ul>
+    </div>
+    <button class="settings">      
+    </button>
     <div class="weather">
-      <input type="text" class="city" />
+      <input type="text" class="city"/>
       <i class="weather-icon owf"></i>
       <div class="weather-error"></div>
       <div class="description-container">
-        <span class="temperature"></span>
-        <span class="weather-description"></span>
+        <div class="temperature"></div>
+        <div class="weather-description"></div>
       </div>
       <div class="wind"></div>
       <div class="humidity"></div>
@@ -50,6 +74,39 @@
       <div class="author"></div>
     </div>
   </footer>  
+
+  <!-- <section class="ctrl">
+    <details>
+      <summary class="ctrl__sum">Выбор языка</summary>
+        <div class="ctrl__inner">
+          <div class="ru">RU</div>
+          <div class="en">EN</div>
+        </div>
+        
+    </details>
+    <details>
+      <summary class="ctrl__sum">Источник изображений</summary>
+      <div class="ctrl__inner">
+        <div>Github</div>
+          <details>
+            <summary class="ctrl__sum">Unsplash</summary>
+            <div class="">nature</div>
+            <div class="">cats</div>
+          </details>
+
+      </div>        
+    </details>
+    <details>      
+      <summary class="ctrl__sum">Скрыть / отобразить</summary>
+      <div class="ctrl__inner">
+        <div>Приветствие</div>
+        <div>Аудио</div>
+        <div>Время</div>        
+        <div>Погода</div>
+      </div>        
+      
+    </details>            
+  </section> -->
 </body>
 </html>
 

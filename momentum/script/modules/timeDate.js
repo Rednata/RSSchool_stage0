@@ -9,7 +9,7 @@ export const getTime = () => {
     const currentDate = new Date();
     const currentTime = currentDate.toLocaleTimeString();      
     const optionsDay = {weekday: 'long', month: 'long', day: 'numeric'};
-    const currentDay = currentDate.toLocaleDateString('ru', optionsDay);        
+    const currentDay = currentDate.toLocaleDateString('en', optionsDay);        
     time.textContent = currentTime;
     date.textContent = currentDay;
   };

@@ -1,13 +1,23 @@
-export const localStorageControl = () => {
-  const name = document.querySelector('.name');  
+import { getWeather } from './weatherFetch.js';
 
-  name.addEventListener('change', () => {            
+export const localStorageControl = (value) => {
+  const name = document.querySelector('.name');    
+
+  name.addEventListener('change', () => {                
     localStorage.setItem('name', name.value);
   })
+
+  if (value) {
+    localStorage.setItem('city', value);
+  }    
 }
 
-const getLocalStorage = () => {
+export const getLocalStorage = () => {
   const name = document.querySelector('.name');  
+  const city = document.querySelector('.city');
   name.value = localStorage.getItem('name') ||  '';  
-}
-window.addEventListener('load', getLocalStorage);
+  city.value = localStorage.getItem('city') || 'Минск';
+  const localName = name.value;
+  const localCity = city.value;
+  return { localName, localCity };
+};

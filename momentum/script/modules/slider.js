@@ -17,9 +17,14 @@ export const setBG = (currentDate) => {
   if (number < 10) {
     number = makeDoubleDigit(number)
   }
+  const img = new Image();
+  img.src = `./assets/img/${currentDate}/${number}.jpg`
+  img.onload = () => {    
+    document.body.style.backgroundImage = `url(./assets/img/${currentDate}/${number}.jpg)`
+  }
   // body.style.backgroundImage = "url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')";
   // document.body.style.backgroundImage = `url(https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/${index}.jpg)`;
-  document.body.style.backgroundImage = `url(./assets/img/${currentDate}/${number}.jpg)`
+  
 }
 
 const setBGSlide = (currentDate, number) => {  
@@ -40,13 +45,11 @@ const setBGSlide = (currentDate, number) => {
 
 const getSlideNext = (currentDate) => {
   randomNum++;
-  console.log(randomNum);
   setBGSlide(currentDate, randomNum)
 }
 
 const getSlidePrev = (currentDate) => {
-  randomNum--;
-  console.log(randomNum);
+  randomNum--;  
   setBGSlide(currentDate, randomNum)
 }
 
