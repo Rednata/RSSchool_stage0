@@ -19,7 +19,6 @@ export const getQuotes = async () => {
   }
   const response = await fetch(url);
   const data = await response.json();
-  console.log(data.length);
   const randomNum = getRandomNum();      
   quote.textContent = data[randomNum].text;
   author.textContent = data[randomNum].author

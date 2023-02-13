@@ -1,4 +1,4 @@
-import { setStorage } from './localStorage.js';
+import { getLocalStorage, setStorage } from './localStorage.js';
 
 const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
@@ -40,7 +40,8 @@ export const getWeather = async (city, lang) => {
 
 cityInput.addEventListener('change', () => {  
   const value = cityInput.value;  
-  getWeather(value);  
+  const lang = getLocalStorage('lang') || 'ru';
+  getWeather(value, lang);  
   setStorage('city', value);  
   document.querySelector('.weather-error').textContent = '';
 })

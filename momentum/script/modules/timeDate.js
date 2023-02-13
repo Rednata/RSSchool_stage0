@@ -1,4 +1,3 @@
-import { setBG } from './slider.js';
 import { getLocalStorage, setStorage } from './localStorage.js';
 
 export const getTime = (lang) => {

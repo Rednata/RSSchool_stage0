@@ -16,6 +16,3 @@ export const playList = [
     src: './assets/sounds/SummerWind.mp3',    
   }
 ];
-
-
-
