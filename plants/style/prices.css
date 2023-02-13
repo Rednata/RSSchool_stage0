@@ -1,0 +1,260 @@
+.prices {
+  padding-top: 41px;
+}
+
+.prices__container {
+  background-image: url("../assets/image/leafs_prise.png");
+  background-repeat: no-repeat;
+  background-position: top 223px right 100px;
+  
+  padding-bottom: 126px;
+}
+
+.prices__title {
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+.prices-inner {
+  display: flex;
+  justify-content: space-between;  
+}
+
+.prices-prices {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+  border-radius: 20px; 
+  border: 1px solid var(--border-color);
+  padding: 34px 41px;
+}
+
+.category {
+  position: relative;
+  width: 250px;
+  border-radius: 20px; 
+  background-color: var(--background-color);
+  overflow: hidden;
+  padding: 16px 40px 16px;
+  height: 50px;
+  transition: height .4s ease-in-out;
+
+}
+
+.category:focus {
+  outline: 1px solid var(--accent-add-color)
+}
+.category_active {    
+  background-color: var(--select-color);
+  height: auto;  
+  padding: 16px 40px 12px;  
+}
+
+.category__title {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.category__hr {
+  display: block;
+  width: 97%;
+  height: 1px;
+  background-color: var(--select-color-round);
+  margin-bottom: 6px;
+}
+
+.category__descript {
+  font-size: 10px;
+  line-height: 10px;
+  color: var(--title-text-color);
+  margin-bottom: 6px;
+}
+
+.category__price-wrapper {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.category__price-USD {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-add-color);
+  
+}
+
+.category__price-count {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-add-color);
+  margin-right: 4px;
+}
+
+.category__price-hour {
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.category__order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  max-width: 86px;
+  height: 25px;
+  text-align: center;
+  background-color: #ffffff;
+  border: none;
+  color: var(--title-text-color);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.category:after {
+  position: absolute;
+  right: 41px;
+  top: 17px;
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  background-image: url("../assets/image/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.category_active:after {
+  background-image: url("../assets/image/accordion_btn.svg")
+}
+
+.category:hover {
+  color: var(--accent-add-color);
+  transition: color 0.2s ease-in;
+}
+
+.prices-gardeners {
+  text-align: right;
+  transform: translateY(-110px);  
+}
+
+.prices-gardeners__title {  
+  max-width: 452px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 41px;  
+}
+
+.prices-gardeners__link {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--accent-add-color);
+  color: var(--accent-add-color);
+  font-family: Inika;
+  font-weight: 700;
+  font-size: 20px;    
+  max-width: 162px;
+  padding: 0 20px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: transparent;
+  margin-right: 0;
+  margin-left: auto;  
+}
+
+.prices-gardeners__link:hover {
+  border-color: var(--accent-main-color);
+  transition: border-color 0.2s ease;
+}
+
+@media (max-width: 1000px) {
+  .prices {
+    padding-top: 41px;    
+  }
+  .prices__container {
+    padding-bottom: 162px;
+    background-position: bottom 80px right 40px;
+  }
+  .prices__title {   
+    font-size: 35px;    
+    margin-bottom: 58px;
+    padding-left: 14px;
+  } 
+  .prices-gardeners {
+    transform: translateY(0); 
+    max-width: 290px;
+  }
+  .prices-gardeners__title {     
+    font-size: 25px;
+    line-height: 35px;            
+    margin-bottom: 29px
+  }
+}
+
+@media (max-width: 750px) {
+  .prices {
+    padding-top: 26px;    
+  }
+  .prices__container {
+    background-image: none;
+    padding-bottom: 41px;
+  }
+  .prices-inner {
+    flex-direction: column;
+    gap: 17px;        
+    width: 60%;
+    margin: 0 auto;
+  }
+  .prices__title {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .prices-prices {
+    padding: 29px 22px;
+    gap: 12px;
+  }
+  .category {
+    width: 100%;
+    padding-left: 29px;
+    font-size: 15px;
+  }
+  .category:after {
+    transform: translateY(0);
+    right: 22px;      
+  }
+  .prices-gardeners {
+    margin: 0 auto;
+    width: 101%;
+    text-align: center;
+  }
+  .prices-gardeners__title {
+    font-size: 20px;
+    margin-bottom: 19px;
+  }
+  .prices-gardeners__link {
+    width: 121px;
+    height: 35px;
+    font-size: 15px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 580px) {
+  .prices-inner {
+    width: 224px;
+  }
+  .prices__title {
+    margin-left: -13px;
+  }
+}
