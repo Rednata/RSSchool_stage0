@@ -20,7 +20,7 @@ const getSourceSong = (target) => {
   target.classList.add('play-item_active');
   const song = target.dataset.song;
   songName.textContent = song;            
-  audio.src = `../assets/sounds/${song}.mp3`;
+  audio.src = `../../assets/sounds/${song}.mp3`;
   
   audio.play();
   playSong(target);
