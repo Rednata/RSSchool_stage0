@@ -1,3 +1,6 @@
+import {playList} from './playlist.js';
+console.log(playList);
+
 const audio = new Audio();
 
 const playBtn = document.querySelector('.play');
@@ -13,15 +16,21 @@ const volumeInput = document.querySelector('.volume__input');
 const playPrev = document.querySelector('.play-prev');
 const playNext = document.querySelector('.play-next');
 
+const findIndex = (target) => {
+  const currentSongIndex = playItems.findIndex(song => {        
+    return song === target
+  }); 
+  return currentSongIndex
+}
+
 const getSourceSong = (target) => {  
   playItems.forEach(item => {
     item.className = 'play-item';
   });
   target.classList.add('play-item_active');
-  const song = target.dataset.song;
-  songName.textContent = song;            
-  audio.src = `../../assets/sounds/${song}.mp3`;
-  
+  const ind = findIndex(target)
+  audio.src = playList[ind].src;  
+  document.querySelector('.player-name').textContent = playList[ind].title;
   audio.play();
   playSong(target);
 }
@@ -71,7 +80,7 @@ const getTimePassedTextContent = (duration) => {
 }
 
 const loopPlay = () => {
-  audio.addEventListener('ended', () => {
+  audio.addEventListener('ended', () => {    
     const currentSongIndex = playItems.findIndex(song => {        
       return song === document.querySelector('.play-item_active')
     });       
@@ -141,25 +150,23 @@ export const controlPlayer = () => {
   })
 
   const sliderSong = () => {
-    playPrev.addEventListener('click', () => {            
-      const currentSongIndex = playItems.findIndex(song => {        
-        return song === document.querySelector('.play-item_active')
-      });   
-      if (currentSongIndex > 0) {
-        getSourceSong(playItems[currentSongIndex - 1])
+    playPrev.addEventListener('click', () => { 
+      const songActive = document.querySelector('.play-item_active');
+      const ind = findIndex(songActive);  
+      if (ind > 0) {
+        getSourceSong(playItems[ind - 1])
       } else {
         getSourceSong(playItems[playItems.length - 1])
       }
     });
 
     playNext.addEventListener('click', () => {            
-      const currentSongIndex = playItems.findIndex(song => {        
-        return song === document.querySelector('.play-item_active')
-      });   
-      if (currentSongIndex >= (playItems.length - 1) || currentSongIndex < 0) {
+      const songActive = document.querySelector('.play-item_active');
+      const ind = findIndex(songActive);   
+      if (ind >= (playItems.length - 1) || ind < 0) {
         getSourceSong(playItems[0])
       } else {
-        getSourceSong(playItems[currentSongIndex + 1])
+        getSourceSong(playItems[ind + 1])
       }
     })        
   }  
