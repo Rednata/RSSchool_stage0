@@ -370,6 +370,7 @@ body {
 
 .ctrl__sum {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .ctrl__inner {
@@ -378,7 +379,12 @@ body {
   align-items: start;
   padding-left: 20px;
   gap: 10px;
+  
   /* border: 1px solid red; */
+}
+
+.ru, .en {
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
