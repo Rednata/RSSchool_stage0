@@ -8,6 +8,9 @@ import { getWeather } from './modules/weatherFetch.js';
 import { renderMenu } from './modules/renderMenu.js';
 import { state } from './modules/state.js';
 import { hiddenBlock } from './modules/hiddenBlock.js';
+import { currentHidden } from './modules/hiddenBlock.js';
+
+
 
 const init = () => {
   const state1 = getLocalStorage('state') || state;
@@ -32,6 +35,7 @@ const init = () => {
   selectSource();
   renderMenu(lang);
   showMenu();
+  currentHidden()
   hiddenBlock();
 }
 

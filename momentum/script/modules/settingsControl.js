@@ -19,34 +19,39 @@ export const showMenu = () => {
   })
 }
 
-export const selectLang = () => {
+export const selectLang = () => {  
   const langRU = document.querySelector('.ru');
   const langEn = document.querySelector('.en');
 
   langRU.addEventListener('click', () => {   
-    langRU.classList.add('ctrl-btn_active');
-    langEn.classList.remove('ctrl-btn_active');
+    if (!langRU.classList.contains('ctrl-btn_active')) {
+      langRU.classList.add('ctrl-btn_active');
+      langEn.classList.remove('ctrl-btn_active');        
+      const lang = 'ru';    
+      setStorage('lang', lang);          
+      getTime(lang);
+      showGreeting(lang);  
+      getWeather(city, lang);    
+      renderMenu(lang);
+      getQuotes();
+    } else {
 
-    const lang = 'ru';    
-    setStorage('lang', lang);          
-    getTime(lang);
-    showGreeting(lang);  
-    getWeather(city, lang);    
-    renderMenu(lang);
-    getQuotes();
+    }
   })
 
   langEn.addEventListener('click', () => {   
+    if (!langEn.classList.contains('ctrl-btn_active')) { 
+      langRU.classList.remove('ctrl-btn_active');
+      langEn.classList.add('ctrl-btn_active');      
+      const lang = 'en';
+      setStorage('lang', lang);      
+      getTime(lang);
+      showGreeting(lang);  
+      getWeather(city, lang);    
+      renderMenu(lang);
+      getQuotes();
+    }
 
-    langRU.classList.remove('ctrl-btn_active');
-    langEn.classList.add('ctrl-btn_active');
-    const lang = 'en';
-    setStorage('lang', lang);      
-    getTime(lang);
-    showGreeting(lang);  
-    getWeather(city, lang);    
-    renderMenu(lang);
-    getQuotes();
   });
 const city = getLocalStorage('city') || 'Минск';
 }
@@ -56,21 +61,29 @@ export const selectSource = () => {
   const github = document.querySelector('.github');
   const nature = document.querySelector('.nature');
   const cats = document.querySelector('.cats');
+  const sourceBtnAll = document.querySelectorAll('.ctrl-inner_source .ctrl-btn');
 
-  source.addEventListener('click', ({target}) => {
+  source.addEventListener('click', ({target}) => {    
+
     if (target === github) {           
       setBG();
       state.photoSource = 'github';
-      setStorage('state', state)
+      setStorage('state', state);
+      sourceBtnAll.forEach(btn => btn.classList.remove('ctrl-btn_active'));
+      github.classList.add('ctrl-btn_active')
     }
     else if (target === nature) {      
       setBGUnsplash('nature');
       state.photoSource = 'nature';
-      setStorage('state', state)
+      setStorage('state', state);
+      sourceBtnAll.forEach(btn => btn.classList.remove('ctrl-btn_active'));
+      nature.classList.add('ctrl-btn_active')
     } else if (target === cats) {      
       setBGUnsplash('cats');
       state.photoSource = 'cats';
-      setStorage('state', state)      
+      setStorage('state', state);
+      sourceBtnAll.forEach(btn => btn.classList.remove('ctrl-btn_active'));
+      cats.classList.add('ctrl-btn_active')
     }
   })
 }

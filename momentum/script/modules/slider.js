@@ -13,7 +13,6 @@ const getRandomNum = () => {
 }
 
 let randomNum = getRandomNum();
-
 const makeDoubleDigit = (number) => {
   return String(number).padStart(2, '0');     
 }
@@ -24,47 +23,45 @@ export const setBG = () => {
   if (number < 10) {
     number = makeDoubleDigit(number)
   }
+  // const url = `./assets/img/${currentDate}/${number}.jpg`;
+  const url = `https://github.com/Rednata/bgImg/blob/main/${currentDate}/${number}.jpg?raw=true`
+
   const img = new Image();
-  img.src = `./assets/img/${currentDate}/${number}.jpg`;
-  img.onload = () => {    
-    document.body.style.backgroundImage = `url(./assets/img/${currentDate}/${number}.jpg)`
+  img.src = url;  
+  img.onload = () => {
+    document.body.style.backgroundImage = `url(${url})`    
   }
 }
 
-// body.style.backgroundImage = "url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')";
-  // document.body.style.backgroundImage = `url(https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/${index}.jpg)`;
-
-
-
-// export const setBGUnsplash = async (key) => {
-//   console.log(key);
-//   const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${key}&client_id=a-8uLZVXLAYyWkGpYyd8PhJYoIB-jt8OHpo5xNlhopY`;  
-//   try {
-//     const response = await fetch(url);
-//     const data = await response.json();  
-//     const img = new Image();
-//     img.src = data.urls.regular;
-//     img.onload = () => {    
-//       document.body.style.backgroundImage = `url("${data.urls.regular}")` ;
-//     }    
-//   } 
-//   catch(err) {
-//     alert('Возможно превышен лимит запросов. Источник изображений переключен на Github', err);
-//     setBG();
-//     state.photoSource = 'github';
-//     setStorage('state', state)
-//   } 
-// }
-
-export const setBGUnsplash = () => {   
-  const state1 = getLocalStorage('state') || state;
-  const url = `./assets/img/bg.jpg`; 
-  const img = new Image(); 
-  img.src = url;
-  img.onload = () => {    
-    document.body.style.backgroundImage = `url("${url}")`;
-  };
+export const setBGUnsplash = async (key) => {
+  console.log(key);
+  const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${key}&client_id=a-8uLZVXLAYyWkGpYyd8PhJYoIB-jt8OHpo5xNlhopY`;  
+  try {
+    const response = await fetch(url);
+    const data = await response.json();  
+    const img = new Image();
+    img.src = data.urls.regular;
+    img.onload = () => {    
+      document.body.style.backgroundImage = `url("${data.urls.regular}")` ;
+    }    
+  } 
+  catch(err) {
+    alert('Возможно превышен лимит запросов. Источник изображений переключен на Github', err);
+    setBG();
+    state.photoSource = 'github';
+    setStorage('state', state)
+  } 
 }
+
+// export const setBGUnsplash = () => {   
+//   const state1 = getLocalStorage('state') || state;
+//   const url = `./assets/img/bg.jpg`; 
+//   const img = new Image(); 
+//   img.src = url;
+//   img.onload = () => {    
+//     document.body.style.backgroundImage = `url("${url}")`;
+//   };
+// }
 
 
 
@@ -81,7 +78,8 @@ const setBGSlide = (currentDate, number) => {
     number = '01';
     randomNum = '01';
   }
-  document.body.style.backgroundImage = `url(./assets/img/${currentDate}/${number}.jpg)`
+  document.body.style.backgroundImage =  `url(https://github.com/Rednata/bgImg/blob/main/${currentDate}/${number}.jpg?raw=true)`
+  // document.body.style.backgroundImage = `url(./assets/img/${currentDate}/${number}.jpg)`
 }
 
 const getSlideNext = (currentDate) => {
