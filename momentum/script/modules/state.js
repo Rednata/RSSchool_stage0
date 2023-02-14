@@ -1,4 +1,4 @@
 export const state = {  
   photoSource: 'github',
-  blocks: ['time', 'greet', 'quote', 'weather', 'audio', 'todo']
+  blocks: ['audio', 'weather', 'time', 'date', 'greet', 'quote']
 }

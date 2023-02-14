@@ -8,7 +8,7 @@ export const renderMenu = (lang) => {
   const ctrlTime = document.querySelector('.ctrl_time');
   const ctrlWeather = document.querySelector('.ctrl_weather');
   const ctrlQuote = document.querySelector('.ctrl_quote');
-  const ctrlTodo = document.querySelector('.ctrl_todo');
+  const ctrlDate = document.querySelector('.ctrl_date');
 
   ctrlLang.textContent = (lang === 'ru') ? 'Выбор языка' : 'Choice language';
   ctrlSource.textContent = (lang === 'ru') ? 'Источник изображений' : 'Source images';  
@@ -18,4 +18,5 @@ export const renderMenu = (lang) => {
   ctrlTime.textContent = (lang === 'ru') ? 'Время' : 'Time';
   ctrlWeather.textContent = (lang === 'ru') ? 'Погода' : 'Weather';
   ctrlQuote.textContent = (lang === 'ru') ? 'Цитата' : 'Quote';  
+  ctrlDate.textContent = (lang === 'ru') ? 'Дата' : 'Date';  
 }
