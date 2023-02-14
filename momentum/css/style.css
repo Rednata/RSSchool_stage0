@@ -16,12 +16,22 @@ body {
   font-size: 16px;
   color: #fff;
   text-align: center;
-  /* background: url("../assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5); */
+  
   background-position: center;  
   background-size: cover;
   background-color:  rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
   transition: background-image 1s ease-in-out;
+  overflow-x: hidden;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;    
+}
+
+.hidden_text {  
+  color: transparent;  
 }
 
 .header {
@@ -37,6 +47,7 @@ body {
 .player__inner {
   display: flex;
   gap: 15px;
+  transition: opacity 0.6s;
 }
 
 .player {
@@ -189,16 +200,33 @@ body {
   transition: 0.3s;
   opacity: 0.8;
   border-radius: 50%;
+  
+  
+
 }
 
-.settings:hover {
-  opacity: 1;  
+.settings:hover {  
+  /* opacity: 1;  
   border: 0;
   outline: 0;  
-  transform: scale(1.1);
+  transform: scale(1.1); */
+  /* animation: settingsHover 3s easy linear; */
+  animation-name: settingsHover;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 3s;
 }
 
-.settings:focus {
+@keyframes settingsHover {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }   
+}
+
+.settings_active {
   opacity: 1;
   transform: scale(1.1);
 }
@@ -212,6 +240,7 @@ body {
   width: 180px;
   min-height: 180px;  
   text-align: left;
+  transition: color 0.3s ease;
 }
 
 .weather-error {
@@ -241,6 +270,7 @@ body {
   outline: 0;
   border-bottom: 1px solid #fff;
   background-color: transparent;
+  transition: opacity 0.6s;
 }
 
 .city::placeholder {  
@@ -284,12 +314,14 @@ body {
   font-family: 'Arial-MT';
   font-size: 100px;
   letter-spacing: -4px;    
+  transition: color 0.3s ease;
 }
 
 .date {
   min-height: 28px;
   font-size: 24px;
   margin-bottom: 20px;  
+  transition: opacity 0.6s;
 }
 
 .greeting-container {
@@ -306,6 +338,7 @@ body {
   flex: 1;  
   padding: 10px;
   text-align: right;  
+  transition: color 0.3s ease;
 }
 
 .name {
@@ -318,6 +351,7 @@ body {
   background-color: transparent;
   border: 0;
   outline: 0;  
+  transition: opacity 0.6s;
 }
 
 .name::placeholder {
@@ -341,6 +375,10 @@ body {
   background-image: url("../assets/svg/reload.svg");  
 }
 
+.footer__quote {
+  transition: color 0.3s ease;
+}
+
 .quote {
   min-height: 32px;
 }
@@ -352,39 +390,97 @@ body {
 
 .ctrl {
   position: fixed;
-  top: 20px;
-  left: 45%;
-  transform: translateX(-50%);
-  /* min-height: 200px; */
+  bottom: 0;
+  right: 0;
+  transform: translateX(+100%);
   display: flex;
-  /* flex-direction: column; */
-  /* align-items: flex-start; */
+  flex-direction: column;
   gap: 20px;  
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
-  
-  /* opacity: 0.3; */
-  color: #ffffff  
+  width: 240px;
+  color: #ffffff  ;  
+  background-color: rgb(197, 178, 178, 0.8);
+  transition: transform 0.3s;
+}
 
+.ctrl_active {
+  transform: translateX(0);
 }
 
 .ctrl__sum {
-  margin-bottom: 10px;
-  cursor: pointer;
+  margin-bottom: 10px;  
 }
 
-.ctrl__inner {
+.ctrl-inner {
+  align-items: start;
+  padding-left: 5px;
+  gap: 10px;
+  text-align: left;
+}
+
+.ctrl-inner_source {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  padding-left: 20px;
-  gap: 10px;
-  
-  /* border: 1px solid red; */
 }
 
-.ru, .en {
+.ctrl-inner_show {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ctrl-inner__title {
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.ctrl-inner__title.title_source {
+  margin-bottom: 0;
+}
+
+
+
+.ctrl-btn {
+  width: 100px;
+  height: 20px;
+  border-radius: 8px;
+  border: none;
   cursor: pointer;
+}
+
+.ctrl-btn_active {
+	box-shadow: inset rgb(89, 129, 161) -1px -1px 8px 0px;
+}
+
+/* .ctrl-btn_source:focus {
+  box-shadow: inset rgb(89, 129, 161) -1px -1px 8px 0px;
+} */
+
+.display_none {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .ctrl {
+    font-size: 14px;
+    gap: 10px;  
+    padding: 7px;
+    width: 195px;
+    background-color: rgb(197, 178, 178, 1);    
+  }
+  .ctrl-btn {
+    font-size: 12px;
+    width: 80px;
+    height: 18px;
+  }
+  .ctrl-inner__title {
+    margin-bottom: 7px;
+  }
+  
+  .ctrl-inner__title.title_source {
+    margin-bottom: 2px;
+  }
 }
 
 @media (max-width: 768px) {

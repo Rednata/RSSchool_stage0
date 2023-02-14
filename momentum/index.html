@@ -35,10 +35,10 @@
     </div>
     
       <ul class="play-list">
-        <li class="play-item">1 Aqua Caelestis</li>
-        <li class="play-item">2 Ennio Morricone</li>
-        <li class="play-item">3 River Flows In You</li>
-        <li class="play-item">4 Summer Wind</li>
+        <li class="play-item">1 Grace Jones</li>
+        <li class="play-item">2 Vanessa Mae Windscreen</li>
+        <li class="play-item">3 Vanessa Mae Flowers</li>
+        <li class="play-item">4 Vanessa Mae I feel love</li>
       </ul>
     </div>
     <button class="settings">      
@@ -69,44 +69,44 @@
   </main>
   <footer class="footer">
     <button class="change-quote"></button>
-    <div>
+    <div class="footer__quote">
       <div class="quote"></div>
       <div class="author"></div>
     </div>
   </footer>  
 
   <section class="ctrl">
-    <details>
-      <summary class="ctrl__sum ctrl__sum_lang">Выбор языка</summary>
-        <div class="ctrl__inner">
-          <div class="ru">RU</div>
-          <div class="en">EN</div>
+        <div class="ctrl-inner">
+          <p class="ctrl-inner__title title_lang">Выбор языка</p>          
+          <button class="ctrl-btn ru">RU</button>
+          <button class="ctrl-btn en">EN</button>
         </div>
         
-    </details>
-    <details>
-      <summary class="ctrl__sum ctrl__sum_source">Источник изображений</summary>
-      <div class="ctrl__inner">
-        <div>Github</div>
-          <details>
-            <summary class="ctrl__sum ctrl__sum_unsplash">Unsplash</summary>
-            <div class="nature">nature</div>
-            <div class="cats">cats</div>
-          </details>
+        <div class="ctrl-inner ctrl-inner_source">
+          <p class="ctrl-inner__title title_source">Источник</p>                    
+          <button class="ctrl-btn ctrl-btn_source github">Github</button>     
+          <div class="unsplash-inner">
+            <button class="ctrl-btn ctrl-btn_source nature">API nature</button>            
+            <button class="ctrl-btn ctrl-btn_source cats">API cats</button>
+          </div>               
+          
+        </div>
 
-      </div>        
-    </details>
-    <details>      
-      <summary class="ctrl__sum ctrl__sum_show">Скрыть / отобразить</summary>
-      <div class="ctrl__inner">
-        <div class="ctrl__greet">Приветствие</div>
-        <div class="ctrl__audio">Аудио</div>
-        <div class="ctrl__time">Время</div>        
-        <div class="ctrl__weather">Погода</div>
-      </div>        
-      
-    </details>            
+        <div class="ctrl-inner">
+          <p class="ctrl-inner__title title_show">Скрыть</p>          
+          <div class="ctrl-inner_show">
+            <button class="ctrl-btn ctrl_audio" data-hidden="audio">Аудио</button>
+            <button class="ctrl-btn ctrl_weather" data-hidden="weather">Погода</button>
+            <button class="ctrl-btn ctrl_time" data-hidden="time">Время</button>
+            <button class="ctrl-btn ctrl_date" data-hidden="date">Дата</button>
+            <button class="ctrl-btn ctrl_greet" data-hidden="greet">Приветствие</button>                                
+            <button class="ctrl-btn ctrl_quote" data-hidden="quote">Цитата</button>
+            
+          </div>
+          
+        </div>    
   </section>
+
 </body>
 </html>
 

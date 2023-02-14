@@ -3,11 +3,21 @@ const settings = {};
 
 
 export const setStorage = (key, value) => {
-  localStorage.setItem(key, value)   
+  if (typeof value === 'object') {
+    localStorage.setItem(key, JSON.stringify(value));
+  } else {
+    localStorage.setItem(key, value)   
+  }
+  
 }
 
 export const getLocalStorage = (key) => {
-  return localStorage.getItem(key);
+  if (key === 'state') {
+    return JSON.parse(localStorage.getItem(key));
+  } else {
+    return localStorage.getItem(key);
+  }
+  
   // const name = document.querySelector('.name');  
   // const city = document.querySelector('.city');
   // name.value = localStorage.getItem('name') ||  '';  
