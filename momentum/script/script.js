@@ -14,7 +14,7 @@ const init = () => {
   Оцениваю работу на 145 баллов.
   Выполнены все пункты, кроме "ToDo List" = 10 баллов 
   и "Использование в качестве источника изображений Flickr API" = 5 баллов
-  `);
+  `);  
 
   const state1 = getLocalStorage('state') || state;
   if (state1.photoSource === 'github') {
@@ -24,6 +24,7 @@ const init = () => {
   };
 
   const lang = getLocalStorage('lang') || 'ru';
+  firstLoadWindow(lang)
   const city = getLocalStorage('city') || 'Минск';    
   getTime(lang);
   const currentDay = showGreeting(lang);  
@@ -39,7 +40,7 @@ const init = () => {
   selectSource();
   renderMenu(lang);
   showMenu();
-  firstLoadWindow(lang)
+
 }
 
 init();

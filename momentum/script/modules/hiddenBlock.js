@@ -6,9 +6,16 @@ const show = document.querySelector('.ctrl-inner_show');
 const stateCurrent = getLocalStorage('state') || state;
 
 const firstLoadHidden = () => {
+  document.querySelector('.weather').classList.add('transition');
+  document.querySelector('.player__inner').classList.add('transition');
+  document.querySelector('.date').classList.add('transition');
+  document.querySelector('.time').classList.add('transition');
+  document.querySelector('.greeting-container').classList.add('transition');
+  document.querySelector('.quote').classList.add('transition');
+
   allShowBtn.forEach(btn => btn.classList.add('ctrl-btn_active'));
   (stateCurrent.blocks).forEach(elem => {
-    document.getElementById(elem).classList.remove('hidden')    
+    document.getElementById(elem).classList.remove('hidden');
     document.querySelector(`[data-hidden=${elem}]`).classList.remove('ctrl-btn_active')  
   })
 }
