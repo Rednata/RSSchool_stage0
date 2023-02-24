@@ -1,129 +1,59 @@
 import { setStorage, getLocalStorage } from './localStorage.js';
 import {state} from './state.js';
 
-const audio = document.querySelector('.player__inner');
-const weather = document.querySelector('.weather');
-const time = document.querySelector('.time');
-const date = document.querySelector('.date');
-const greet = document.querySelector('.greeting');
-const quote = document.querySelector('.footer__quote');
-
-const hiddenElements = [audio, weather, time, date, greet, quote];
-const hiddenTegs = ['audio', 'weather', 'time', 'date', 'greet', 'quote'];
 const allShowBtn = document.querySelectorAll('.ctrl-inner_show .ctrl-btn');
-
 const show = document.querySelector('.ctrl-inner_show');
-
 const stateCurrent = getLocalStorage('state') || state;
 
-const ttt = () => {
+const firstLoadHidden = () => {
   allShowBtn.forEach(btn => btn.classList.add('ctrl-btn_active'));
-  (stateCurrent.blocks).forEach((elem, ind )=> {        
-    if  (elem === 0) {
-      switch(hiddenTegs[ind]) {
-        case ('audio'):               
-          hiddenAudio(ind)        
-          break;
-        case('weather'): 
-          hiddenWeather(ind);
-          break;
-        case('quote'): 
-          hiddenQuote(ind);
-          break;  
-        case('greet'): 
-          hiddenGreet(ind);
-          break;
-        default: 
-          hiddenOther(ind);                
-      }      
-    } else {
-      document.querySelector(`[data-hidden=${elem}]`).classList.remove('ctrl-btn_active')
-    }
-  });
-  if (getLocalStorage('lang') === 'en') {
-    document.querySelector('.en').classList.toggle('ctrl-btn_active');    
-  } else {
-    document.querySelector('.ru').classList.toggle('ctrl-btn_active');    
-    
-  }
-  if (stateCurrent.photoSource === 'github') {
-    document.querySelector('.github').classList.toggle('ctrl-btn_active');    
-  } else if (stateCurrent.photoSource === 'nature') {
-    document.querySelector('.nature').classList.toggle('ctrl-btn_active');    
-  } else {
-    document.querySelector('.cats').classList.toggle('ctrl-btn_active');    
-  }
-
+  (stateCurrent.blocks).forEach(elem => {
+    document.getElementById(elem).classList.remove('hidden')    
+    document.querySelector(`[data-hidden=${elem}]`).classList.remove('ctrl-btn_active')  
+  })
 }
 
-export const currentHidden = () => {
-  window.addEventListener('load', ttt, {once: true});
+const firstLoadLang = (lang) => {    
+  const btnActive = document.querySelector(`.${lang}`);
+  btnActive.classList.add('ctrl-btn_active');
 }
 
-const hiddenAudio = (ind) => {
-  hiddenElements[ind].classList.toggle('hidden');
-  hiddenElements[ind].classList.toggle('hidden_text');  
-};
-const hiddenWeather = (ind) => {
-  hiddenElements[ind].classList.toggle('hidden_text');        
-  document.querySelector('.city').classList.toggle('hidden');        
-};
-const hiddenQuote = (ind) => {
-  hiddenElements[ind].classList.toggle('hidden_text');        
-  document.querySelector('.change-quote').classList.toggle('hidden');
-};
-const hiddenGreet = (ind) => {
-  hiddenElements[ind].classList.toggle('hidden_text');        
-  document.querySelector('.name').classList.toggle('hidden');
-};
-const hiddenOther = (ind) => {
-  hiddenElements[ind].classList.toggle('hidden_text');
+const firstLoadSource = () => {
+  const source = stateCurrent.photoSource || 'github';
+  const btnActive = document.querySelector(`.${source}`);
+  btnActive.classList.add('ctrl-btn_active');  
 }
 
+export const firstLoadWindow = (lang) => {  
+  window.addEventListener('load', () => {
+    // document.querySelector('html').style.visibility = 'visible';    
+    firstLoadHidden();   
+    firstLoadLang(lang);
+    firstLoadSource();
+  }, {once: true})  
+}
 
+const makeHidden = (elem) => {    
+  elem.classList.toggle('hidden');  
+};
 
 export const hiddenBlock = () => {
-  show.addEventListener('click', ({target}) => {
+  show.addEventListener('click', ({target}) => {    
+    const selector = target.dataset.hidden;    
+    const currentElem = document.getElementById(selector);
+    const activeBtn = target;
+    if (selector) {
+      makeHidden(currentElem)
+      activeBtn.classList.toggle('ctrl-btn_active');  
 
-    const current = hiddenTegs.find(elem => elem === target.dataset.hidden);
-      
-    if (current) {         
-      const ind = hiddenTegs.indexOf(current);   
-      
-      switch(hiddenElements[ind]) {
-        case (audio): 
-          hiddenAudio(ind)        
-        break;
-
-        case(weather): 
-          hiddenWeather(ind);
-          break;
-
-        case(quote): 
-          hiddenQuote(ind);
-          break;
-
-        case(greet): 
-          hiddenGreet(ind);
-          break;
-
-        default: 
-          hiddenOther(ind);
-          break
-      }
-      target.classList.toggle('ctrl-btn_active');  
-                      
-        if (hiddenElements[ind].classList.contains('hidden') 
-          || hiddenElements[ind].classList.contains('hidden_text')) {
-              stateCurrent.blocks[ind] = 0;
-              setStorage('state', stateCurrent);
-            } else {
-              stateCurrent.blocks[ind] = hiddenTegs[ind];              
-              setStorage('state', stateCurrent);
-            }
+      const indexElemInStateCurrent = (stateCurrent.blocks).indexOf(selector);      
+      if (indexElemInStateCurrent >= 0) {        
+        (stateCurrent.blocks).splice(indexElemInStateCurrent, 1);
+        setStorage('state', stateCurrent);        
+      } else {
+        (stateCurrent.blocks).push(selector);
+        setStorage('state', stateCurrent);
+      }      
     }    
-    
-      
-    
   })  
 }
