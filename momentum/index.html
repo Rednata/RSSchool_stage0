@@ -11,7 +11,7 @@
 </head>
 <body>
   <header class="header">    
-    <div class="player__inner">
+    <div class="player__inner hidden" id="audio">
       <div class="player">      
         <div class="player-controls">
           <button class="play-prev player-icon"></button>
@@ -43,7 +43,7 @@
     </div>
     <button class="settings">      
     </button>
-    <div class="weather">
+    <div class="weather hidden" id="weather">
       <input type="text" class="city"/>
       <i class="weather-icon owf"></i>
       <div class="weather-error"></div>
@@ -60,19 +60,32 @@
       <button class="slide-prev slider-icon"></button>
       <button class="slide-next slider-icon"></button>
     </div>
-    <time class="time"></time>
-    <date class="date"></date>
-    <div class="greeting-container">
+    <time class="time hidden" id="time"></time>
+    <date class="date hidden" id="date"></date>
+    <div class="greeting-container hidden" id="greet">
       <span class="greeting"></span>
       <input type="text" class="name" placeholder="Введите имя">
     </div>
   </main>
   <footer class="footer">
-    <button class="change-quote"></button>
-    <div class="footer__quote">
-      <div class="quote"></div>
-      <div class="author"></div>
+    <div class="footer-wrapper__img">
+      <a href="https://github.com/Rednata" class="footer__link footer__link_github">        
+      </a>
+      <a href="https://rs.school/js/" class="footer__link footer__link_rss">        
+      </a>
+      
     </div>
+    <div class="quote-inner">
+      <div class="quote hidden" id="quote">
+        <button class="change-quote"></button>
+        <div class="footer__quote">
+          <div class="quote__text"></div>
+          <div class="author"></div>
+        </div>
+      </div>
+    </div>
+    
+    
   </footer>  
 
   <section class="ctrl">

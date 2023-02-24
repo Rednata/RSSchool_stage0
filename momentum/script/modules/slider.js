@@ -5,27 +5,26 @@ import { state } from './state.js';
 const rightSlideBtn = document.querySelector('.slide-next');
 const leftSlideBtn = document.querySelector('.slide-prev');
 
-
-
 const getRandomNum = () => {
   const num = Math.floor(Math.random() * 20) + 1;
   return num;
 }
 
 let randomNum = getRandomNum();
-const makeDoubleDigit = (number) => {
-  return String(number).padStart(2, '0');     
-}
 
 export const setBG = () => {    
   const currentDate = showGreeting();
   let number = randomNum;
-  if (number < 10) {
-    number = makeDoubleDigit(number)
+  if (number <= 0) {
+    number = 20;
+    randomNum = 20;
+  }
+  if (number > 20) {    
+    number = '1';
+    randomNum = '1';
   }
   // const url = `./assets/img/${currentDate}/${number}.jpg`;
-  const url = `https://github.com/Rednata/bgImg/blob/main/${currentDate}/${number}.jpg?raw=true`
-
+  const url = `https://github.com/Rednata/bgImg/blob/main/${currentDate}/${number}.jpg?raw=true`  
   const img = new Image();
   img.src = url;  
   img.onload = () => {
@@ -33,8 +32,7 @@ export const setBG = () => {
   }
 }
 
-export const setBGUnsplash = async (key) => {
-  console.log(key);
+export const setBGUnsplash = async (key) => {  
   const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${key}&client_id=a-8uLZVXLAYyWkGpYyd8PhJYoIB-jt8OHpo5xNlhopY`;  
   try {
     const response = await fetch(url);
@@ -53,61 +51,22 @@ export const setBGUnsplash = async (key) => {
   } 
 }
 
-// export const setBGUnsplash = () => {   
-//   const state1 = getLocalStorage('state') || state;
-//   const url = `./assets/img/bg.jpg`; 
-//   const img = new Image(); 
-//   img.src = url;
-//   img.onload = () => {    
-//     document.body.style.backgroundImage = `url("${url}")`;
-//   };
-// }
-
-
-
-const setBGSlide = (currentDate, number) => {  
-  if (number < 10) {
-    number = makeDoubleDigit(number)
-  }
-  if (number <= 0) {
-    number = 20;
-    randomNum = 20;
-  }
-  if (number > 20) {
-    console.log('+++');
-    number = '01';
-    randomNum = '01';
-  }
-  document.body.style.backgroundImage =  `url(https://github.com/Rednata/bgImg/blob/main/${currentDate}/${number}.jpg?raw=true)`
-  // document.body.style.backgroundImage = `url(./assets/img/${currentDate}/${number}.jpg)`
-}
-
 const getSlideNext = (currentDate) => {
-  randomNum++;
-  setBGSlide(currentDate, randomNum)
-}
-
-const getSlidePrev = (currentDate) => {
-  randomNum--;  
-  setBGSlide(currentDate, randomNum)
-}
-
-const ttt1 = (currentDate) => {
   const state1 = getLocalStorage('state') || state;
   const key = state1.photoSource;
-  if (key === 'github') {    
-    getSlideNext(currentDate);
+  if (key === 'github') {        
+    setBG(randomNum++)
   } else {
       setBGUnsplash(key)  
   }
 }
 
-const ttt2 = (currentDate) => {
+const getSlidePrev = (currentDate) => {
   const state1 = getLocalStorage('state') || state;
   const key = state1.photoSource;
   
-  if (key === 'github') {
-    getSlidePrev(currentDate);
+  if (key === 'github') {    
+    setBG(randomNum--)
   } else {
       setBGUnsplash(key)  
   }
@@ -115,11 +74,11 @@ const ttt2 = (currentDate) => {
 
 export const slider = (currentDate) => {
     leftSlideBtn.addEventListener('click', () => {
-      ttt1(currentDate)
+      getSlideNext(currentDate)
     });
   
     rightSlideBtn.addEventListener('click', () => {
-      ttt2(currentDate)
+      getSlidePrev(currentDate)
     })
 }
 

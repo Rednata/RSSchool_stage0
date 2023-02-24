@@ -8,11 +8,10 @@ import { getQuotes } from './blocquotes.js';
 import { setBG, setBGUnsplash } from './slider.js';
 import { state } from './state.js';
 
-
+const settings = document.querySelector('.settings');
+const menu = document.querySelector('.ctrl');  
 
 export const showMenu = () => {
-  const settings = document.querySelector('.settings');
-  const menu = document.querySelector('.ctrl');  
   settings.addEventListener('click', () => {
     settings.classList.toggle('settings_active');
     menu.classList.toggle('ctrl_active');

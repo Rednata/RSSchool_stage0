@@ -1,6 +1,6 @@
 import { getLocalStorage } from './localStorage.js';
 
-const quote = document.querySelector('.quote');
+const quote = document.querySelector('.quote__text');
 const author = document.querySelector('.author');
 const changeQuote = document.querySelector('.change-quote');
 
