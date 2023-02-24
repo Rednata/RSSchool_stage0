@@ -24,7 +24,9 @@ export const getWeather = async (city, lang) => {
       wind.textContent = `wind: ${Math.round(data.wind.speed)}m/s`;
       humidity.textContent = `humidity: ${Math.round(data.main.humidity)}%`;
     }
-    
+    if (data.name === "Xankandi") {
+      throw new Error(err)
+    }  
   }
   
   catch(err) {
